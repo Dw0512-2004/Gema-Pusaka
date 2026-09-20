@@ -15,9 +15,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Introduction Scene.unity
     guid: 3a3eaa8efff5371428addc641fc906f4
   - enabled: 1
-    path: Assets/Scenes/Cut Scene 1.unity
-    guid: 81d6cdfded73c3546b75daffb703e1e1
-  - enabled: 1
     path: Assets/Scenes/Main Entrance/Tutorial Scene.unity
     guid: 31de88087f9eb534ca2907422b53fda5
   - enabled: 1
@@ -69,9 +66,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Forgotten Library/Forgotten Library Main (FLM).unity
     guid: 48c570efd5ef51d4eae55ecc6dca3951
   - enabled: 1
-    path: Assets/Scenes/Throne Room/Boss Room.unity
-    guid: 7da6c8b38b070344d93d660b020ce9bc
-  - enabled: 1
     path: Assets/Scenes/Throne Room/Throne Room Bottom (TRB).unity
     guid: e1cb5eafb61ef5c468d7220dbfc957d6
   - enabled: 1
@@ -86,5 +80,11 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Throne Room/Throne Room Upper (TRU).unity
     guid: db4b8f2517b0b6449aeae6e38847a636
+  - enabled: 1
+    path: Assets/Scenes/Throne Room/Boss Room.unity
+    guid: 7da6c8b38b070344d93d660b020ce9bc
+  - enabled: 1
+    path: Assets/Scenes/End Scene.unity
+    guid: eb8a85862c59cf0469d5984c25d3f63c
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
