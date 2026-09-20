@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4607331788919418049}
   - component: {fileID: 4303852455936937697}
+  - component: {fileID: 7485822393888086241}
   m_Layer: 0
   m_Name: Loading Manager
   m_TagString: Untagged
@@ -47,7 +48,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LoadingManager
   loadingPanel: {fileID: 2295161480057293790}
   progressBar: {fileID: 5225722674133914540}
-  loadingDuration: 3
+--- !u!114 &7485822393888086241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1105801030404303445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 879450482cb297c48a4e468579f06029, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Data
 --- !u!1 &1905944195912686476
 GameObject:
   m_ObjectHideFlags: 0
@@ -373,8 +385,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0000063583, y: 128}
-  m_SizeDelta: {x: 545.6221, y: 118.3552}
+  m_AnchoredPosition: {x: 0.0000095367, y: 132}
+  m_SizeDelta: {x: 622.5026, y: 118.3552}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &385738233408261021
 CanvasRenderer:
@@ -406,8 +418,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: LOADING...
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
+  m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

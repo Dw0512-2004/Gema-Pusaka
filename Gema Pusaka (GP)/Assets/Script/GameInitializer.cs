@@ -5,13 +5,13 @@ using Unity.Cinemachine;
 
 public class GameInitializer : MonoBehaviour
 {
-    [Header("全局传送网关")]
-    [Tooltip("跨场景传送时记录的目标出生点 ID（由 SceneTransition 写入）")]
+    [Header("全局传送网关 (原 GameManager 功能)")]
+    [Tooltip("跨场景传送时记录的目标出生点 ID（由 ScenePortal 写入）")]
     public static string nextSpawnPoint = "";
 
     [Header("默认出生点设置 (用于读档或直接进游戏)")]
     [Tooltip("如果没有指定 nextSpawnPoint，则默认寻找这个名字的出生点")]
-    public string defaultSpawnPointName = "Spawn_Start";
+    public string defaultSpawnPointName = "Start Point";
 
     [Header("预制体与容错")]
     [Tooltip("将你的 Nusa 预制体 (Prefab) 拖到这里")]
@@ -38,14 +38,18 @@ public class GameInitializer : MonoBehaviour
 
     private void InitializePlayer(int activeSlot)
     {
+        bool hasSavedPos = PlayerPrefs.GetInt("Slot_" + activeSlot + "_HasSavedPos", 0) == 1;
+        bool isNewGame = PlayerPrefs.GetInt("IsNewGame_Intent", 0) == 1;
+        
+        // 【關鍵防禦】：檢查車票。如果有車票，代表是過圖進來的，絕對不要讀取舊存檔座標！
+        bool isFromPortal = !string.IsNullOrEmpty(nextSpawnPoint);
+
         if (NusaController.Instance == null && nusaPrefab != null)
         {
             Vector3 spawnPos = Vector3.zero;
 
-            // 如果是通过传送门切过来的，先暂时在原点生成，交由后面的 PlayerSpawnPoint 精准定位
-            // 如果是读档进来的，则尝试读取存档坐标
-            bool hasSavedPos = PlayerPrefs.GetInt("Slot_" + activeSlot + "_HasSavedPos", 0) == 1;
-            if (string.IsNullOrEmpty(nextSpawnPoint) && hasSavedPos)
+            // 如果不是從傳送門來（例如直接開啟遊戲或讀檔），且有存檔紀錄
+            if (!isFromPortal && hasSavedPos && !isNewGame)
             {
                 float posX = PlayerPrefs.GetFloat("Slot_" + activeSlot + "_PosX", 0f);
                 float posY = PlayerPrefs.GetFloat("Slot_" + activeSlot + "_PosY", 0f);
@@ -58,13 +62,13 @@ public class GameInitializer : MonoBehaviour
         }
         else if (NusaController.Instance != null)
         {
-            // 如果跨场景带过来的 Nusa 已经存在，且不是通过传送门（比如读档），检查是否需要传送回存档位置
-            bool hasSavedPos = PlayerPrefs.GetInt("Slot_" + activeSlot + "_HasSavedPos", 0) == 1;
-            if (string.IsNullOrEmpty(nextSpawnPoint) && hasSavedPos)
+            // 如果跨场景带过来的 Nusa 已经存在，且不是通过传送门过來的，才传送到存档位置
+            if (!isFromPortal && hasSavedPos && !isNewGame)
             {
                 float posX = PlayerPrefs.GetFloat("Slot_" + activeSlot + "_PosX", 0f);
                 float posY = PlayerPrefs.GetFloat("Slot_" + activeSlot + "_PosY", 0f);
                 NusaController.Instance.transform.position = new Vector3(posX, posY, 0f);
+                Debug.Log($"<color=yellow>【GameManager】讀取存檔，覆寫座標至 ({posX}, {posY})</color>");
             }
         }
     }
@@ -80,28 +84,28 @@ public class GameInitializer : MonoBehaviour
 
     private IEnumerator PositionAndCameraSequence()
     {
-        // 1. 锁住移动并清空物理速度
         if (NusaController.Instance != null)
         {
-            NusaController.Instance.canMove = false;
+            NusaController.Instance.DisableMovement();
             Rigidbody2D rb = NusaController.Instance.GetComponent<Rigidbody2D>();
             if (rb != null) rb.linearVelocity = Vector2.zero;
         }
 
-        // 2. 等待一帧，让场景中所有的 PlayerSpawnPoint（出生点）完成 Start() 逻辑
+        // 等待一帧，让场景中所有的 PlayerSpawnPoint 优先完成传送对齐逻辑
         yield return null;
 
-        // 3. 容错判断：如果没有通过传送门指定 nextSpawnPoint，并且也没有存档坐标，则寻找默认出生点
+        bool isNewGame = PlayerPrefs.GetInt("IsNewGame_Intent", 0) == 1;
+        int activeSlot = PlayerPrefs.GetInt("CurrentActiveSlot", 1);
+        bool hasSavedPos = PlayerPrefs.GetInt("Slot_" + activeSlot + "_HasSavedPos", 0) == 1;
+
+        // 如果 nextSpawnPoint 为空，说明不是从传送门进来的，执行默认出生点逻辑
         if (string.IsNullOrEmpty(nextSpawnPoint))
         {
-            int activeSlot = PlayerPrefs.GetInt("CurrentActiveSlot", 1);
-            bool hasSavedPos = PlayerPrefs.GetInt("Slot_" + activeSlot + "_HasSavedPos", 0) == 1;
-
-            if (!hasSavedPos)
+            if (isNewGame || !hasSavedPos)
             {
                 GameObject spawnPoint = GameObject.Find(defaultSpawnPointName);
                 if (spawnPoint == null) spawnPoint = GameObject.Find("SpawnPoint");
-                if (spawnPoint == null) spawnPoint = GameObject.Find("Start Point");
+                if (spawnPoint == null) spawnPoint = GameObject.Find("Spawn_Start");
 
                 if (spawnPoint != null && NusaController.Instance != null)
                 {
@@ -110,10 +114,20 @@ public class GameInitializer : MonoBehaviour
                     NusaController.Instance.transform.position = targetPos;
                     Debug.Log($"<color=green>【默认出生】未指定传送门ID，已传送到默认出生点: {spawnPoint.name}</color>");
                 }
+                else
+                {
+                    Debug.LogError("<color=red>【错误】场景中没有找到名为 '" + defaultSpawnPointName + "' 的起点！</color>");
+                }
+
+                if (isNewGame)
+                {
+                    PlayerPrefs.SetInt("IsNewGame_Intent", 0);
+                    PlayerPrefs.Save();
+                }
             }
         }
 
-        // 4. 绑定 Cinemachine 相机，瞬间切过去防止远距离飞掠
+        // 绑定 Cinemachine 相机
         CinemachineCamera vcam = Object.FindAnyObjectByType<CinemachineCamera>();
         if (vcam != null && NusaController.Instance != null)
         {
@@ -121,14 +135,27 @@ public class GameInitializer : MonoBehaviour
             vcam.OnTargetObjectWarped(NusaController.Instance.transform, NusaController.Instance.transform.position - vcam.transform.position);
         }
 
-        // 5. 恢复控制权
-        if (NusaController.Instance != null && string.IsNullOrEmpty(nextSpawnPoint))
+        // 🚨 核心配合 1：强制等待 2 帧！
+        // 这两帧是留给 Cinemachine 运算跟 Unity 渲染管线把“相机瞬移后的画面”画出来的时间。
+        yield return null;
+        yield return null;
+
+        if (NusaController.Instance != null)
         {
-            NusaController.Instance.canMove = true;
+            NusaController.Instance.EnableMovement();
             Time.timeScale = 1f;
         }
+        
+        // 【统一撕车票】：在一切都就绪后，由 GameManager 统一清空车票
+        nextSpawnPoint = "";
 
         Debug.Log("<color=green>【GameManager】关卡初始化与坐标对齐完毕！</color>");
+
+        // 🚨 核心配合 2：亲自下令解除 Loading 黑屏！
+        if (LoadingManager.Instance != null)
+        {
+            LoadingManager.Instance.HideLoadingScreen();
+        }
     }
 
     private string GetSkillNameKey(int index)

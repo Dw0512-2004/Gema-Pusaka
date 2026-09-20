@@ -318,7 +318,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42464d94791959c499a8f42acf41bf7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameInitializer
-  defaultSpawnPointName: Spawn_Start
+  defaultSpawnPointName: Start Point
   nusaPrefab: {fileID: 2916997390572340735, guid: 3a47d4f07d7f683458bbe4e3b89bfaa9, type: 3}
 --- !u!4 &206085354
 Transform:
@@ -745,7 +745,7 @@ GameObject:
   - component: {fileID: 708078658}
   - component: {fileID: 708078659}
   m_Layer: 0
-  m_Name: MEH
+  m_Name: Main Entrance Hall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -778,7 +778,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78708fb83c88ba8469dda028cdb7aedb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerSpawnPoint
-  pointID: MEHRG
+  pointID: MEH to RG
 --- !u!1 &725259792
 GameObject:
   m_ObjectHideFlags: 0
@@ -790,7 +790,7 @@ GameObject:
   - component: {fileID: 725259793}
   - component: {fileID: 725259794}
   m_Layer: 0
-  m_Name: SFL
+  m_Name: Staircase Forgotten Library
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -823,7 +823,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78708fb83c88ba8469dda028cdb7aedb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerSpawnPoint
-  pointID: SFLRG
+  pointID: SFL to RG
 --- !u!1 &727604489
 GameObject:
   m_ObjectHideFlags: 0
@@ -1255,7 +1255,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1045373259}
   - component: {fileID: 1045373261}
-  - component: {fileID: 1045373260}
+  - component: {fileID: 1045373262}
   m_Layer: 0
   m_Name: RGSFL
   m_TagString: Untagged
@@ -1278,20 +1278,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 698585428}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1045373260
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1045373258}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e5a102a4b064ed469c52ff1165054b9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SceneTransition
-  sceneToLoad: Staircase Forgotten Library (SFL)
-  exitMark: RGSFL
 --- !u!61 &1045373261
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1338,6 +1324,20 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1045373262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1045373258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23ff98559fe47ba4a908105bd9dbc213, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ScenePortal
+  targetSceneName: Staircase Forgotten Library (SFL)
+  targetSpawnID: RG to SFL
 --- !u!1 &1057563895
 GameObject:
   m_ObjectHideFlags: 0
