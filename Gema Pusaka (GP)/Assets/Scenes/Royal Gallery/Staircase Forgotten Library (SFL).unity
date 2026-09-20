@@ -405,9 +405,9 @@ GameObject:
   m_Component:
   - component: {fileID: 178420238}
   - component: {fileID: 178420240}
-  - component: {fileID: 178420239}
+  - component: {fileID: 178420241}
   m_Layer: 0
-  m_Name: SFLFLM
+  m_Name: Staircase Forgotten Library to Forgotten Library Main
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -428,20 +428,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1467146808}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &178420239
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 178420237}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e5a102a4b064ed469c52ff1165054b9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SceneTransition
-  sceneToLoad: Forgotten Library Main (FLM)
-  exitMark: SFLFLM
 --- !u!61 &178420240
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -488,6 +474,20 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &178420241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 178420237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23ff98559fe47ba4a908105bd9dbc213, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ScenePortal
+  targetSceneName: Forgotten Library Main (FLM)
+  targetSpawnID: SFL to FLM
 --- !u!1 &227690500
 GameObject:
   m_ObjectHideFlags: 0
@@ -744,7 +744,7 @@ GameObject:
   - component: {fileID: 264282692}
   - component: {fileID: 264282693}
   m_Layer: 0
-  m_Name: FLM
+  m_Name: Forgotten Library Main
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -777,7 +777,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78708fb83c88ba8469dda028cdb7aedb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerSpawnPoint
-  pointID: FLMSFL
+  pointID: SFl to FLM
 --- !u!1 &355082145
 GameObject:
   m_ObjectHideFlags: 0
@@ -1314,9 +1314,9 @@ GameObject:
   m_Component:
   - component: {fileID: 841376542}
   - component: {fileID: 841376544}
-  - component: {fileID: 841376543}
+  - component: {fileID: 841376545}
   m_Layer: 0
-  m_Name: SFLRG
+  m_Name: Staircase Forgotten Library to Royal Gallery
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1337,20 +1337,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1467146808}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &841376543
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 841376541}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e5a102a4b064ed469c52ff1165054b9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SceneTransition
-  sceneToLoad: Royal Gallery (RG)
-  exitMark: SFLRG
 --- !u!61 &841376544
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1397,6 +1383,20 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &841376545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 841376541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23ff98559fe47ba4a908105bd9dbc213, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ScenePortal
+  targetSceneName: Royal Gallery (RG)
+  targetSpawnID: SFL to RG
 --- !u!1 &923541495
 GameObject:
   m_ObjectHideFlags: 0
@@ -2015,7 +2015,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42464d94791959c499a8f42acf41bf7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameInitializer
-  defaultSpawnPointName: Spawn_Start
+  defaultSpawnPointName: Start Point
   nusaPrefab: {fileID: 2916997390572340735, guid: 3a47d4f07d7f683458bbe4e3b89bfaa9, type: 3}
 --- !u!4 &1105268867
 Transform:
@@ -2397,7 +2397,7 @@ GameObject:
   - component: {fileID: 1412516522}
   - component: {fileID: 1412516523}
   m_Layer: 0
-  m_Name: RG
+  m_Name: Royal Gallery
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2430,7 +2430,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78708fb83c88ba8469dda028cdb7aedb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerSpawnPoint
-  pointID: RGSFL
+  pointID: SFL to RG
 --- !u!1 &1467146807
 GameObject:
   m_ObjectHideFlags: 0

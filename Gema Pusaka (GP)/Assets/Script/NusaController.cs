@@ -131,16 +131,26 @@ public class NusaController : MonoBehaviour
             an.SetBool("isGrounded", isGrounded);
         }
 
-        // 交互按键计时逻辑 (长按)
+        // ==========================================
+        // 交互按键计时逻辑 (长按呼出技能面板)
+        // ==========================================
         if (isInteractPressed && !panelToggled)
         {
-            holdTimer += Time.deltaTime;
-            if (holdTimer >= holdDurationRequired)
+            // 【关键修改】：检查是否解锁了技能，没有的话直接不计时
+            if (SkillManager.Instance != null && !SkillManager.Instance.HasAnySkillUnlocked())
             {
-                if (SkillManager.Instance != null)
+                // 未解锁技能，直接忽略，不执行计时
+            }
+            else
+            {
+                holdTimer += Time.deltaTime;
+                if (holdTimer >= holdDurationRequired)
                 {
-                    SkillManager.Instance.ShowPanel();
-                    panelToggled = true; 
+                    if (SkillManager.Instance != null)
+                    {
+                        SkillManager.Instance.ShowPanel();
+                        panelToggled = true; 
+                    }
                 }
             }
         }
@@ -148,6 +158,9 @@ public class NusaController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.KeypadEnter) || Input.GetKeyDown(KeyCode.E)) SkillPointerDown();
         if (Input.GetKeyUp(KeyCode.KeypadEnter) || Input.GetKeyUp(KeyCode.E)) SkillPointerUp();
 
+        // ==========================================
+        // 移动输入逻辑
+        // ==========================================
         if (!canMove)
         {
             horizontalInput = 0f;
@@ -184,7 +197,7 @@ public class NusaController : MonoBehaviour
     }
     
     // ==========================================
-    // 暂停菜单功能方法 (原 PauseMenuManager)
+    // 暂停菜单功能方法
     // ==========================================
 
     public void PauseGame()
@@ -357,9 +370,14 @@ public class NusaController : MonoBehaviour
     {
         if (isPaused) return;
         isInteractPressed = false;
+        
+        // 只有在未呼出面板（短按）且且计时小于要求时，才触发技能释放
         if (!panelToggled && holdTimer < holdDurationRequired)
         {
-            if (SkillManager.Instance != null) SkillManager.Instance.CastCurrentSkill();
+            if (SkillManager.Instance != null) 
+            {
+                SkillManager.Instance.CastCurrentSkill(); // CastCurrentSkill 内部也有安全拦截
+            }
         }
         holdTimer = 0f;
     }
@@ -385,5 +403,17 @@ public class NusaController : MonoBehaviour
             Gizmos.color = Color.red;
             Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
         }
+    }
+
+    // ==========================================
+    // Fungus 集成方法
+    // ==========================================
+    
+    // 供 Fungus 的 Invoke Method 调用，告诉系统这是一场新游戏
+    public void SetNewGameIntent()
+    {
+        PlayerPrefs.SetInt("IsNewGame_Intent", 1);
+        PlayerPrefs.Save();
+        Debug.Log("<color=cyan>【Nusa】已标记为新游戏，将无视旧存档坐标！</color>");
     }
 }

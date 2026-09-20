@@ -3,11 +3,11 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro; // 引入 TextMeshPro 命名空间
 
-public class DataSceneManager : MonoBehaviour
+public class DataManager : MonoBehaviour
 {
     [Header("场景跳转设置")]
     [Tooltip("如果是新游戏，默认进入的第一个剧情/关卡场景 (例如 Scene1_Cutscene 或 tutorial_scene)")]
-    public string defaultStartSceneName = "Scene1_Cutscene"; 
+    public string defaultStartSceneName = "Introduction Scene"; 
 
     [System.Serializable]
     public class SaveSlotUI
@@ -149,7 +149,7 @@ public class DataSceneManager : MonoBehaviour
     // 返回主菜单按钮方法
     public void BackToMainMenu()
     {
-        SafeLoadScene("Main_Menu"); // 请确保你的主菜单场景名称和这里一致
+        SafeLoadScene("Main Menu"); // 请确保你的主菜单场景名称和这里一致
     }
 
     // 内部安全加载方法

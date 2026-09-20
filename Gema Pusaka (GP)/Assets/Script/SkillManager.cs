@@ -1,5 +1,6 @@
 using UnityEngine;
-using System; // 必须引入此命名空间以使用 Action
+using System;
+using UnityEngine.UI; // 加入以使用 Button
 
 [RequireComponent(typeof(AudioSource))]
 public class SkillManager : MonoBehaviour
@@ -8,7 +9,15 @@ public class SkillManager : MonoBehaviour
 
     [Header("UI 引用")]
     [Tooltip("拖入包含所有按钮和背景的父级 Panel_Background")]
-    public GameObject skillPanelUI; 
+    public GameObject skillPanelUI;
+
+    [Header("技能按钮引用 (用于控制显示/隐藏)")]
+    [Tooltip("手机端的虚拟互动/技能施放按钮")]
+    public GameObject interactButton; // 新增：控制主互动按钮的显示
+    public GameObject btnSerunai;
+    public GameObject btnGong;
+    public GameObject btnGendang;
+    public GameObject btnNobat;
 
     [Header("音效设置 (Audio Clips)")]
     public AudioClip serunaiSound;
@@ -24,6 +33,12 @@ public class SkillManager : MonoBehaviour
     [Header("当前装备的技能")]
     public SkillType currentSkill = SkillType.None;
 
+    [Header("技能解锁状态 (Fungus 激活)")]
+    public bool isSerunaiUnlocked = false;
+    public bool isGongUnlocked = false;
+    public bool isGendangUnlocked = false;
+    public bool isNobatUnlocked = false;
+
     // --- 定义全局技能事件 (携带音频播放时长) ---
     public static event Action<float> OnSerunaiUsed;  
     public static event Action<float> OnGongUsed;     
@@ -32,12 +47,9 @@ public class SkillManager : MonoBehaviour
 
     private void Awake()
     {
-        // 核心管理器单例设置
         if (Instance == null)
         {
             Instance = this;
-            
-            // 【终极加固】：如果这个管理器没有父物体（是个独立物体），强制让它跨场景存活！
             if (transform.parent == null)
             {
                 DontDestroyOnLoad(gameObject);
@@ -55,28 +67,103 @@ public class SkillManager : MonoBehaviour
             audioSource.playOnAwake = false;
         }
         
-        // 游戏开始时确保面板是隐藏的
         HidePanel();
     }
 
-    // 呼出面板 (由 NusaController 的长按逻辑触发)
+    private void Start()
+    {
+        // 游戏启动时刷新一次按钮显示状态
+        UpdateSkillButtonsVisibility();
+    }
+
+    // ==========================================
+    // ▼ 供 Fungus 调用的解锁方法 ▼
+    // ==========================================
+
+    public void UnlockSerunai()
+    {
+        isSerunaiUnlocked = true;
+        PlayerPrefs.SetInt("Runtime_Has_Serunai", 1);
+        Debug.Log("<color=yellow>【技能解锁】获得技能：Serunai！</color>");
+        UpdateSkillButtonsVisibility();
+        
+        // 如果当前没有装备技能，自动装备刚解锁的这个
+        if (currentSkill == SkillType.None) currentSkill = SkillType.Serunai;
+    }
+
+    public void UnlockGong()
+    {
+        isGongUnlocked = true;
+        PlayerPrefs.SetInt("Runtime_Has_Gong", 1);
+        Debug.Log("<color=yellow>【技能解锁】获得技能：Gong！</color>");
+        UpdateSkillButtonsVisibility();
+        if (currentSkill == SkillType.None) currentSkill = SkillType.Gong;
+    }
+
+    public void UnlockGendang()
+    {
+        isGendangUnlocked = true;
+        PlayerPrefs.SetInt("Runtime_Has_Gendang", 1);
+        Debug.Log("<color=yellow>【技能解锁】获得技能：Gendang！</color>");
+        UpdateSkillButtonsVisibility();
+        if (currentSkill == SkillType.None) currentSkill = SkillType.Gendang;
+    }
+
+    public void UnlockNobat()
+    {
+        isNobatUnlocked = true;
+        PlayerPrefs.SetInt("Runtime_Has_Nobat", 1);
+        Debug.Log("<color=yellow>【技能解锁】获得技能：Nobat！</color>");
+        UpdateSkillButtonsVisibility();
+        if (currentSkill == SkillType.None) currentSkill = SkillType.Nobat;
+    }
+
+    // 判断玩家是否解锁了"至少一个"技能
+    public bool HasAnySkillUnlocked()
+    {
+        return isSerunaiUnlocked || isGongUnlocked || isGendangUnlocked || isNobatUnlocked;
+    }
+
+    // 更新面板上按钮的显示状态
+    public void UpdateSkillButtonsVisibility()
+    {
+        // 1. 只要有任何一个技能解锁，就显示右下角的互动/技能按钮
+        if (interactButton != null) interactButton.SetActive(HasAnySkillUnlocked());
+
+        // 2. 更新面板内个别技能的按钮
+        if (btnSerunai != null) btnSerunai.SetActive(isSerunaiUnlocked);
+        if (btnGong != null) btnGong.SetActive(isGongUnlocked);
+        if (btnGendang != null) btnGendang.SetActive(isGendangUnlocked);
+        if (btnNobat != null) btnNobat.SetActive(isNobatUnlocked);
+    }
+
+    // ==========================================
+    // 面板控制
+    // ==========================================
+
     public void ShowPanel()
     {
+        // 【关键防御】：如果一个技能都没解锁，强制拒绝呼出面板
+        if (!HasAnySkillUnlocked())
+        {
+            Debug.Log("未解锁任何技能，无法打开技能面板。");
+            return;
+        }
+
+        UpdateSkillButtonsVisibility(); // 确保打开前更新一下
+
         if (skillPanelUI != null) skillPanelUI.SetActive(true);
         
-        // 呼出面板时，锁死玩家移动
         if (NusaController.Instance != null)
         {
             NusaController.Instance.DisableMovement();
         }
     }
 
-    // 隐藏面板
     public void HidePanel()
     {
         if (skillPanelUI != null) skillPanelUI.SetActive(false);
         
-        // 恢复玩家移动
         if (NusaController.Instance != null)
         {
             NusaController.Instance.EnableMovement();
@@ -84,19 +171,26 @@ public class SkillManager : MonoBehaviour
     }
 
     // ==========================================
-    // 供 UI 面板按钮 OnClick 调用的方法：只负责“选择”并隐藏面板
+    // 供 UI 面板按钮 OnClick 调用的方法
     // ==========================================
     public void SelectSkill_Serunai() { currentSkill = SkillType.Serunai; HidePanel(); }
     public void SelectSkill_Gong()    { currentSkill = SkillType.Gong;    HidePanel(); }
-    public void SkillSelect_Gendang() { currentSkill = SkillType.Gendang; HidePanel(); } // 保持兼容
+    public void SkillSelect_Gendang() { currentSkill = SkillType.Gendang; HidePanel(); } 
     public void SelectSkill_Gendang() { currentSkill = SkillType.Gendang; HidePanel(); }
     public void SelectSkill_Nobat()   { currentSkill = SkillType.Nobat;   HidePanel(); }
 
     // ==========================================
-    // 供 NusaController 短按调用的方法：执行“释放”
+    // 供 NusaController 短按调用的方法
     // ==========================================
     public void CastCurrentSkill()
     {
+        // 【关键防御】：如果没有解锁任何技能，直接返回
+        if (!HasAnySkillUnlocked() || currentSkill == SkillType.None)
+        {
+            Debug.Log("未装备或未解锁任何技能，无法释放。");
+            return;
+        }
+
         float duration = 0f;
         switch (currentSkill)
         {
@@ -123,14 +217,9 @@ public class SkillManager : MonoBehaviour
                 PlaySound(nobatSound);
                 OnNobatUsed?.Invoke(duration);
                 break;
-                
-            case SkillType.None:
-                Debug.Log("未装备任何技能，无法释放。请长按交互键选择技能。");
-                break;
         }
     }
 
-    // 播放对应乐器音效
     private void PlaySound(AudioClip clip)
     {
         if (clip != null && audioSource != null)
