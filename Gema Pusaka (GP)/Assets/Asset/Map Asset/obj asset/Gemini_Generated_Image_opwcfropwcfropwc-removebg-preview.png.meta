@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 28b0ffff82dfc824ab91f1525bac5aed
+guid: 08ddd36a1af54f346bc9026a1786f7e3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 895705886160251305
-    second: Underground Cellar_0
+      213: -2910052664100513521
+    second: Gemini_Generated_Image_opwcfropwcfropwc-removebg-preview_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -109,30 +109,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WindowsStoreApps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Underground Cellar_0
+      name: Gemini_Generated_Image_opwcfropwcfropwc-removebg-preview_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1024
-        height: 559
+        x: 171
+        y: 64
+        width: 112
+        height: 465
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9a9eecff1cf2e6c00800000000000000
-      internalID: 895705886160251305
+      spriteID: f091c96258a6d97d0800000000000000
+      internalID: -2910052664100513521
       vertices: []
       indices: 
       edges: []
@@ -161,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Underground Cellar_0: 895705886160251305
+      Gemini_Generated_Image_opwcfropwcfropwc-removebg-preview_0: -2910052664100513521
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
