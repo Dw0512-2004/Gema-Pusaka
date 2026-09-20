@@ -820,9 +820,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 127
-        y: 64
-        width: 162
-        height: 65
+        y: 65
+        width: 33
+        height: 63
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -934,7 +934,7 @@ TextureImporter:
         width: 56
         height: 56
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -943,6 +943,116 @@ TextureImporter:
       bones: []
       spriteID: 9581f9974c094e94ea3123e44a8c3633
       internalID: -1970264413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Sidescroller's Dungeon Tiles 32x32_34
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 447
+        width: 65
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 1}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 411a9babdae1cba4f997a3aa68a9d777
+      internalID: 1595347332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Sidescroller's Dungeon Tiles 32x32_35
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 65
+        width: 32
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04401734e924cd44494b450862c85c1a
+      internalID: -1560956276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Sidescroller's Dungeon Tiles 32x32_36
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 65
+        width: 31
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c058eb71ea6b964b8afbe22435fc603
+      internalID: -379091247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Sidescroller's Dungeon Tiles 32x32_37
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 65
+        width: 30
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a32d6acfa19ba443864efb4565c7809
+      internalID: 1377404414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The Sidescroller's Dungeon Tiles 32x32_38
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 65
+        width: 34
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5bfd0cea73f581438317adde2114811
+      internalID: 1061291056
       vertices: []
       indices: 
       edges: []
@@ -989,6 +1099,11 @@ TextureImporter:
       The Sidescroller's Dungeon Tiles 32x32_31: -1767686341
       The Sidescroller's Dungeon Tiles 32x32_32: -1904141643
       The Sidescroller's Dungeon Tiles 32x32_33: -1970264413
+      The Sidescroller's Dungeon Tiles 32x32_34: 1595347332
+      The Sidescroller's Dungeon Tiles 32x32_35: -1560956276
+      The Sidescroller's Dungeon Tiles 32x32_36: -379091247
+      The Sidescroller's Dungeon Tiles 32x32_37: 1377404414
+      The Sidescroller's Dungeon Tiles 32x32_38: 1061291056
       The Sidescroller's Dungeon Tiles 32x32_4: 5088170959482629314
       The Sidescroller's Dungeon Tiles 32x32_5: 4376025586920280008
       The Sidescroller's Dungeon Tiles 32x32_6: 7668858064187872787
