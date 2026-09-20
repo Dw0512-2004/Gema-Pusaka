@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ground
   - Border
+  - Encounter
   layers:
   - Default
   - TransparentFX
