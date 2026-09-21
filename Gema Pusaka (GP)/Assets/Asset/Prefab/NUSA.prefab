@@ -1278,6 +1278,7 @@ GameObject:
   - component: {fileID: 7609888752196679293}
   - component: {fileID: 321672557910967739}
   - component: {fileID: 1762977096990949746}
+  - component: {fileID: 1533594132993940330}
   m_Layer: 0
   m_Name: NUSA
   m_TagString: Player
@@ -1591,6 +1592,20 @@ MonoBehaviour:
   audioSource: {fileID: 321672557910967739}
   footstepClips:
   - {fileID: 8300000, guid: 344934b950f76d241a209279aca8fcf9, type: 3}
+--- !u!114 &1533594132993940330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2916997390572340735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abf0ed3818306564c89eba25394d6c11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NusaPromptManager
+  promptText: {fileID: 2491597247530437585}
+  promptIconImage: {fileID: 1652752004400013468}
 --- !u!1 &3533107536345871298
 GameObject:
   m_ObjectHideFlags: 0
@@ -2601,7 +2616,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4063106791594392861}
-  - {fileID: 3099649076098327413}
   - {fileID: 9035746721272878552}
   m_Father: {fileID: 6700419611770943921}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4915,7 +4929,7 @@ Canvas:
   m_GameObject: {fileID: 7592507195642489665}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 1
+  m_RenderMode: 0
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -4942,11 +4956,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.CanvasScaler
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
-  m_ScreenMatchMode: 0
+  m_ReferenceResolution: {x: 1920, y: 1080}
+  m_ScreenMatchMode: 1
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
@@ -5109,7 +5123,7 @@ MonoBehaviour:
   puzzlePanel: {fileID: 4315302754068814920}
   instrumentButtons:
   - {fileID: 3524420050179062566}
-  - {fileID: 1891856631358771289}
+  - {fileID: 1023761566801153313}
   - {fileID: 2690062028743829387}
   audioSource: {fileID: 1565210121865421085}
   instrumentSounds:

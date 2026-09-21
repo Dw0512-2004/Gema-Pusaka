@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 19098fa60ac21bf49988ef1934abbd6d
+guid: 8c73e4c64c18c9a4e991995943a58d3d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -704288784776519816
-    second: Gemini_Generated_Image_itsyjfitsyjfitsy-removebg-preview 2_0
+      213: -1272677867225930765
+    second: Office_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -46,12 +46,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -75,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -114,7 +114,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Gemini_Generated_Image_itsyjfitsyjfitsy-removebg-preview 2_0
+      name: Office_0
       rect:
         serializedVersion: 2
-        x: 92
-        y: 41
-        width: 346
-        height: 358
+        x: 0
+        y: 0
+        width: 1774
+        height: 1117
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 87f9a1ce41dd936f0800000000000000
-      internalID: -704288784776519816
+      spriteID: 3f32f72093a865ee0800000000000000
+      internalID: -1272677867225930765
       vertices: []
       indices: 
       edges: []
@@ -151,7 +151,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Gemini_Generated_Image_itsyjfitsyjfitsy-removebg-preview 2_0: -704288784776519816
+      Office_0: -1272677867225930765
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
