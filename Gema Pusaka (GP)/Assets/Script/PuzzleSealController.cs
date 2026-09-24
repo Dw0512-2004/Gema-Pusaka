@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using Fungus; // 引入 Fungus 命名空間
 
+[RequireComponent(typeof(AudioSource))]
 public class PuzzleSealController : MonoBehaviour
 {
     [Header("謎題 UI 設定")]
@@ -11,6 +12,11 @@ public class PuzzleSealController : MonoBehaviour
     
     [Tooltip("圓環旋轉的速度")]
     public float rotateSpeed = 5f;
+
+    [Header("音效設定")]
+    [Tooltip("解謎成功時播放的音效")]
+    public AudioClip successSound;
+    private AudioSource audioSource;
 
     [Header("Fungus 聯動設定")]
     [Tooltip("用來控制結局對話的 Flowchart")]
@@ -25,6 +31,12 @@ public class PuzzleSealController : MonoBehaviour
     private int[] targetAngles;
     private bool[] isRotating;
     private bool isSolved = false;
+
+    private void Awake()
+    {
+        // 自動抓取掛在同一個物件上的 AudioSource
+        audioSource = GetComponent<AudioSource>();
+    }
 
     private void Start()
     {
@@ -93,13 +105,18 @@ public class PuzzleSealController : MonoBehaviour
         }
 
         isSolved = true;
-        Debug.Log("<color=green>【解謎成功】歷史的封印已解開！準備廣播 Fungus 事件...</color>");
+        Debug.Log("<color=green>【解謎成功】歷史的封印已解開！準備播放音效與廣播 Fungus 事件...</color>");
+
+        // 🌟 播放專屬的成功音效
+        if (successSound != null && audioSource != null)
+        {
+            audioSource.PlayOneShot(successSound);
+        }
 
         // 1. 發送 Fungus 全局事件 (Event Message)
         if (!string.IsNullOrEmpty(successBlockName))
         {
             Debug.Log($"<color=cyan>【Fungus】發送 Event Message: {successBlockName}</color>");
-            // 這行代碼會對全場景廣播暗號，對應 Message 的 Block 會自動執行！
             Fungus.Flowchart.BroadcastFungusMessage(successBlockName);
         }
         else

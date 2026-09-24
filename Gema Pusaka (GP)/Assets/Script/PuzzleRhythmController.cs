@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
 
+[RequireComponent(typeof(AudioSource))]
 public class PuzzleRhythmController : MonoBehaviour
 {
     [Header("UI 引用")]
@@ -20,6 +21,11 @@ public class PuzzleRhythmController : MonoBehaviour
     [Tooltip("通關需要的成功點擊次數")]
     public int requiredHits = 3;
 
+    [Header("音效設定")]
+    [Tooltip("解謎成功時播放的音效")]
+    public AudioClip successSound;
+    private AudioSource audioSource;
+
     [Header("Fungus 聯動設定")]
     [Tooltip("解謎成功後要廣播的 Fungus Message")]
     public string successMessage = "Puzzle3_Win";
@@ -28,6 +34,12 @@ public class PuzzleRhythmController : MonoBehaviour
     private int currentHits = 0;
     private bool isSolved = false;
     private int direction = 1; // 1 代表向右，-1 代表向左
+
+    private void Awake()
+    {
+        // 自動抓取掛在同一個物件上的 AudioSource
+        audioSource = GetComponent<AudioSource>();
+    }
 
     private void Update()
     {
@@ -50,8 +62,7 @@ public class PuzzleRhythmController : MonoBehaviour
 
         indicator.anchoredPosition = new Vector2(newX, indicator.anchoredPosition.y);
 
-        // 2. 【修改這裡】移除滑鼠點擊檢測，改為只用空白鍵或 Enter 鍵
-        // 畫面上的按鈕會透過呼叫 OnStrikeButtonClicked() 來判定
+        // 2. 檢測空白鍵或 Enter 鍵
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return))
         {
             CheckHitTiming();
@@ -91,9 +102,6 @@ public class PuzzleRhythmController : MonoBehaviour
         else
         {
             Debug.Log("<color=red>【節奏失誤】沒抓準時機！</color>");
-            // 可以選擇失誤扣次數，或者簡單點只重置當前進度
-            // currentHits = Mathf.Max(0, currentHits - 1); 
-            // UpdateProgressText();
         }
     }
 
@@ -109,6 +117,12 @@ public class PuzzleRhythmController : MonoBehaviour
     {
         isSolved = true;
         Debug.Log("<color=green>【解謎成功】自由的脈搏考驗通過！</color>");
+
+        // 🌟 播放專屬的成功音效
+        if (successSound != null && audioSource != null)
+        {
+            audioSource.PlayOneShot(successSound);
+        }
 
         // 廣播 Fungus 事件
         if (!string.IsNullOrEmpty(successMessage))

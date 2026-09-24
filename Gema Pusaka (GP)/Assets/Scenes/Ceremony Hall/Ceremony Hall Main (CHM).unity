@@ -2080,11 +2080,11 @@ MonoBehaviour:
   targetAudioSource: {fileID: 0}
   audioMode: 0
   beepSounds:
-  - {fileID: 8300000, guid: 774486030b696474e8b3cf7f178123da, type: 3}
-  - {fileID: 8300000, guid: f637c5ce9d10e45c7855ed89bfc6b97e, type: 3}
-  - {fileID: 8300000, guid: c53b7c20372e444c6bd7f2ac0729bbe2, type: 3}
+  - {fileID: 8300000, guid: 25557fcad21af154a8f9ffca032de11e, type: 3}
+  - {fileID: 8300000, guid: 25557fcad21af154a8f9ffca032de11e, type: 3}
+  - {fileID: 8300000, guid: 25557fcad21af154a8f9ffca032de11e, type: 3}
   soundEffect: {fileID: 0}
-  inputSound: {fileID: 8300000, guid: 14a396b1562834718b2d52b9c4639264, type: 3}
+  inputSound: {fileID: 8300000, guid: ba2b5d8a58c2aeb48ad9259f938f4067, type: 3}
 --- !u!114 &408375892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3966,6 +3966,18 @@ GameObject:
   - component: {fileID: 906997286}
   - component: {fileID: 906997287}
   - component: {fileID: 906997288}
+  - component: {fileID: 906997292}
+  - component: {fileID: 906997291}
+  - component: {fileID: 906997290}
+  - component: {fileID: 906997289}
+  - component: {fileID: 906997294}
+  - component: {fileID: 906997293}
+  - component: {fileID: 906997300}
+  - component: {fileID: 906997299}
+  - component: {fileID: 906997298}
+  - component: {fileID: 906997297}
+  - component: {fileID: 906997296}
+  - component: {fileID: 906997295}
   m_Layer: 0
   m_Name: FungusController
   m_TagString: Untagged
@@ -4043,7 +4055,7 @@ MonoBehaviour:
   waitForClick: 1
   stopVoiceover: 1
   waitForVO: 0
-  setSayDialog: {fileID: 0}
+  setSayDialog: {fileID: 1503815789}
 --- !u!114 &906997182
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -4304,7 +4316,7 @@ MonoBehaviour:
   portrait: {fileID: -6150243784136745721, guid: 2a9e196fc8322294f8a8ac9b49817c65, type: 3}
   offset: 0
   fromPosition: {fileID: 0}
-  toPosition: {fileID: 0}
+  toPosition: {fileID: 677133469}
   facing: 0
   useDefaultSettings: 1
   fadeDuration: 0.5
@@ -4779,6 +4791,7 @@ MonoBehaviour:
   description: 
   eventHandler: {fileID: 0}
   commandList:
+  - {fileID: 906997299}
   - {fileID: 906997186}
   - {fileID: 906997197}
   - {fileID: 906997196}
@@ -4790,6 +4803,8 @@ MonoBehaviour:
   - {fileID: 906997267}
   - {fileID: 906997266}
   - {fileID: 906997265}
+  - {fileID: 906997292}
+  - {fileID: 906997291}
   - {fileID: 906997195}
   - {fileID: 906997193}
   suppressAllAutoSelections: 0
@@ -4821,7 +4836,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Fungus::Fungus.Flowchart
   version: 1
-  scrollPos: {x: 114.37344, y: 561.845}
+  scrollPos: {x: 587.32764, y: 160.45096}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 400
@@ -4832,19 +4847,7 @@ MonoBehaviour:
     y: 0
     width: 0
     height: 0
-  selectedBlocks:
-  - {fileID: 906997210}
-  - {fileID: 906997211}
-  - {fileID: 906997219}
-  - {fileID: 906997227}
-  - {fileID: 906997228}
-  - {fileID: 906997243}
-  - {fileID: 906997250}
-  - {fileID: 906997251}
-  - {fileID: 906997262}
-  - {fileID: 906997192}
-  - {fileID: 906997194}
-  - {fileID: 906997198}
+  selectedBlocks: []
   selectedCommands: []
   variables:
   - {fileID: 906997199}
@@ -5695,7 +5698,7 @@ MonoBehaviour:
   waitForClick: 1
   stopVoiceover: 1
   waitForVO: 0
-  setSayDialog: {fileID: 0}
+  setSayDialog: {fileID: 1503815789}
 --- !u!114 &906997209
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -5717,7 +5720,7 @@ MonoBehaviour:
   portrait: {fileID: -6150243784136745721, guid: 2a9e196fc8322294f8a8ac9b49817c65, type: 3}
   offset: 0
   fromPosition: {fileID: 0}
-  toPosition: {fileID: 0}
+  toPosition: {fileID: 677133469}
   facing: 0
   useDefaultSettings: 1
   fadeDuration: 0.5
@@ -5758,6 +5761,7 @@ MonoBehaviour:
   - {fileID: 906997274}
   - {fileID: 906997273}
   - {fileID: 906997288}
+  - {fileID: 906997297}
   suppressAllAutoSelections: 0
 --- !u!114 &906997211
 MonoBehaviour:
@@ -5787,6 +5791,7 @@ MonoBehaviour:
   - {fileID: 906997201}
   - {fileID: 906997281}
   - {fileID: 906997287}
+  - {fileID: 906997298}
   suppressAllAutoSelections: 0
 --- !u!114 &906997212
 MonoBehaviour:
@@ -6052,7 +6057,7 @@ MonoBehaviour:
   portrait: {fileID: -6150243784136745721, guid: 2a9e196fc8322294f8a8ac9b49817c65, type: 3}
   offset: 0
   fromPosition: {fileID: 0}
-  toPosition: {fileID: 28497588}
+  toPosition: {fileID: 677133469}
   facing: 0
   useDefaultSettings: 1
   fadeDuration: 0.5
@@ -6508,7 +6513,7 @@ MonoBehaviour:
   waitForClick: 1
   stopVoiceover: 1
   waitForVO: 0
-  setSayDialog: {fileID: 0}
+  setSayDialog: {fileID: 1503815789}
 --- !u!114 &906997238
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -6566,7 +6571,7 @@ MonoBehaviour:
   waitForClick: 1
   stopVoiceover: 1
   waitForVO: 0
-  setSayDialog: {fileID: 0}
+  setSayDialog: {fileID: 1503815789}
 --- !u!114 &906997240
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -6593,7 +6598,7 @@ MonoBehaviour:
   waitForClick: 1
   stopVoiceover: 1
   waitForVO: 0
-  setSayDialog: {fileID: 0}
+  setSayDialog: {fileID: 1503815789}
 --- !u!114 &906997241
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -6677,6 +6682,8 @@ MonoBehaviour:
   - {fileID: 906997231}
   - {fileID: 906997230}
   - {fileID: 906997229}
+  - {fileID: 906997294}
+  - {fileID: 906997293}
   - {fileID: 906997226}
   - {fileID: 906997225}
   suppressAllAutoSelections: 0
@@ -6729,7 +6736,7 @@ MonoBehaviour:
   portrait: {fileID: -6150243784136745721, guid: 2a9e196fc8322294f8a8ac9b49817c65, type: 3}
   offset: 0
   fromPosition: {fileID: 0}
-  toPosition: {fileID: 0}
+  toPosition: {fileID: 677133469}
   facing: 0
   useDefaultSettings: 1
   fadeDuration: 0.5
@@ -6895,8 +6902,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Fungus::Fungus.Block
   nodeRect:
     serializedVersion: 2
-    x: 497.16193
-    y: 119.98462
+    x: 495.91196
+    y: 116.23462
     width: 128.704
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -7041,10 +7048,10 @@ MonoBehaviour:
   stage: {fileID: 0}
   character: {fileID: 1236920736}
   replacedCharacter: {fileID: 0}
-  portrait: {fileID: -4468560251275224205, guid: 946d462001a0ebf42a6982c2dfea1e50, type: 3}
+  portrait: {fileID: -6150243784136745721, guid: 2a9e196fc8322294f8a8ac9b49817c65, type: 3}
   offset: 0
   fromPosition: {fileID: 0}
-  toPosition: {fileID: 0}
+  toPosition: {fileID: 677133469}
   facing: 0
   useDefaultSettings: 1
   fadeDuration: 0.5
@@ -7219,6 +7226,8 @@ MonoBehaviour:
   - {fileID: 906997255}
   - {fileID: 906997254}
   - {fileID: 906997253}
+  - {fileID: 906997290}
+  - {fileID: 906997289}
   - {fileID: 906997252}
   - {fileID: 906997249}
   suppressAllAutoSelections: 0
@@ -7296,7 +7305,7 @@ MonoBehaviour:
   waitForClick: 1
   stopVoiceover: 1
   waitForVO: 0
-  setSayDialog: {fileID: 0}
+  setSayDialog: {fileID: 1503815789}
 --- !u!114 &906997266
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -7324,7 +7333,7 @@ MonoBehaviour:
   waitForClick: 1
   stopVoiceover: 1
   waitForVO: 0
-  setSayDialog: {fileID: 0}
+  setSayDialog: {fileID: 1503815789}
 --- !u!114 &906997267
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -7352,7 +7361,7 @@ MonoBehaviour:
   waitForClick: 1
   stopVoiceover: 1
   waitForVO: 0
-  setSayDialog: {fileID: 0}
+  setSayDialog: {fileID: 1503815789}
 --- !u!114 &906997268
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -7458,7 +7467,7 @@ MonoBehaviour:
   portrait: {fileID: 9095853184155359625, guid: c206ccbc0d260ae4fb65f74f120669fd, type: 3}
   offset: 0
   fromPosition: {fileID: 0}
-  toPosition: {fileID: 0}
+  toPosition: {fileID: 171689715}
   facing: 2
   useDefaultSettings: 1
   fadeDuration: 0.5
@@ -7492,10 +7501,12 @@ MonoBehaviour:
   description: 
   eventHandler: {fileID: 0}
   commandList:
+  - {fileID: 906997296}
   - {fileID: 906997285}
   - {fileID: 906997284}
   - {fileID: 906997283}
   - {fileID: 906997282}
+  - {fileID: 906997295}
   suppressAllAutoSelections: 0
 --- !u!114 &906997273
 MonoBehaviour:
@@ -7630,7 +7641,7 @@ MonoBehaviour:
   portrait: {fileID: -6150243784136745721, guid: 2a9e196fc8322294f8a8ac9b49817c65, type: 3}
   offset: 0
   fromPosition: {fileID: 0}
-  toPosition: {fileID: 0}
+  toPosition: {fileID: 677133469}
   facing: 0
   useDefaultSettings: 1
   fadeDuration: 0.5
@@ -7934,7 +7945,7 @@ MonoBehaviour:
   waitForClick: 1
   stopVoiceover: 1
   waitForVO: 0
-  setSayDialog: {fileID: 0}
+  setSayDialog: {fileID: 1503815789}
 --- !u!114 &906997284
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -7962,7 +7973,7 @@ MonoBehaviour:
   waitForClick: 1
   stopVoiceover: 1
   waitForVO: 0
-  setSayDialog: {fileID: 0}
+  setSayDialog: {fileID: 1503815789}
 --- !u!114 &906997285
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -8019,7 +8030,7 @@ MonoBehaviour:
   waitForClick: 1
   stopVoiceover: 1
   waitForVO: 0
-  setSayDialog: {fileID: 0}
+  setSayDialog: {fileID: 1503815789}
 --- !u!114 &906997287
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -8076,6 +8087,283 @@ MonoBehaviour:
   returnValueType: System.Void
   showInherited: 0
   callMode: 0
+--- !u!114 &906997289
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 906997174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ac5ce55bc698fa4290939ef6e426501, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Fungus::Fungus.Portrait
+  itemId: 118
+  indentLevel: 0
+  display: 2
+  stage: {fileID: 0}
+  character: {fileID: 1236920736}
+  replacedCharacter: {fileID: 0}
+  portrait: {fileID: 0}
+  offset: 0
+  fromPosition: {fileID: 0}
+  toPosition: {fileID: 0}
+  facing: 0
+  useDefaultSettings: 1
+  fadeDuration: 0.5
+  moveDuration: 1
+  shiftOffset: {x: 0, y: 0}
+  move: 0
+  shiftIntoPlace: 0
+  waitUntilFinished: 0
+--- !u!114 &906997290
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 906997174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ac5ce55bc698fa4290939ef6e426501, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Fungus::Fungus.Portrait
+  itemId: 117
+  indentLevel: 0
+  display: 2
+  stage: {fileID: 0}
+  character: {fileID: 692015002}
+  replacedCharacter: {fileID: 0}
+  portrait: {fileID: 0}
+  offset: 0
+  fromPosition: {fileID: 0}
+  toPosition: {fileID: 0}
+  facing: 0
+  useDefaultSettings: 1
+  fadeDuration: 0.5
+  moveDuration: 1
+  shiftOffset: {x: 0, y: 0}
+  move: 0
+  shiftIntoPlace: 0
+  waitUntilFinished: 0
+--- !u!114 &906997291
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 906997174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ac5ce55bc698fa4290939ef6e426501, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Fungus::Fungus.Portrait
+  itemId: 116
+  indentLevel: 0
+  display: 2
+  stage: {fileID: 0}
+  character: {fileID: 1236920736}
+  replacedCharacter: {fileID: 0}
+  portrait: {fileID: 0}
+  offset: 0
+  fromPosition: {fileID: 0}
+  toPosition: {fileID: 0}
+  facing: 0
+  useDefaultSettings: 1
+  fadeDuration: 0.5
+  moveDuration: 1
+  shiftOffset: {x: 0, y: 0}
+  move: 0
+  shiftIntoPlace: 0
+  waitUntilFinished: 0
+--- !u!114 &906997292
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 906997174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ac5ce55bc698fa4290939ef6e426501, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Fungus::Fungus.Portrait
+  itemId: 115
+  indentLevel: 0
+  display: 2
+  stage: {fileID: 0}
+  character: {fileID: 692015002}
+  replacedCharacter: {fileID: 0}
+  portrait: {fileID: 0}
+  offset: 0
+  fromPosition: {fileID: 0}
+  toPosition: {fileID: 0}
+  facing: 0
+  useDefaultSettings: 1
+  fadeDuration: 0.5
+  moveDuration: 1
+  shiftOffset: {x: 0, y: 0}
+  move: 0
+  shiftIntoPlace: 0
+  waitUntilFinished: 0
+--- !u!114 &906997293
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 906997174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ac5ce55bc698fa4290939ef6e426501, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Fungus::Fungus.Portrait
+  itemId: 120
+  indentLevel: 0
+  display: 2
+  stage: {fileID: 0}
+  character: {fileID: 1236920736}
+  replacedCharacter: {fileID: 0}
+  portrait: {fileID: 0}
+  offset: 0
+  fromPosition: {fileID: 0}
+  toPosition: {fileID: 0}
+  facing: 0
+  useDefaultSettings: 1
+  fadeDuration: 0.5
+  moveDuration: 1
+  shiftOffset: {x: 0, y: 0}
+  move: 0
+  shiftIntoPlace: 0
+  waitUntilFinished: 0
+--- !u!114 &906997294
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 906997174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ac5ce55bc698fa4290939ef6e426501, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Fungus::Fungus.Portrait
+  itemId: 119
+  indentLevel: 0
+  display: 2
+  stage: {fileID: 0}
+  character: {fileID: 692015002}
+  replacedCharacter: {fileID: 0}
+  portrait: {fileID: 0}
+  offset: 0
+  fromPosition: {fileID: 0}
+  toPosition: {fileID: 0}
+  facing: 0
+  useDefaultSettings: 1
+  fadeDuration: 0.5
+  moveDuration: 1
+  shiftOffset: {x: 0, y: 0}
+  move: 0
+  shiftIntoPlace: 0
+  waitUntilFinished: 0
+--- !u!114 &906997295
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 906997174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Fungus::Fungus.CallMethod
+  itemId: 125
+  indentLevel: 0
+  targetObject: {fileID: 906997174}
+  methodName: ShowNusaUI
+  delay: 0
+--- !u!114 &906997296
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 906997174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Fungus::Fungus.CallMethod
+  itemId: 124
+  indentLevel: 0
+  targetObject: {fileID: 906997174}
+  methodName: HideNusaUI
+  delay: 0
+--- !u!114 &906997297
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 906997174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Fungus::Fungus.CallMethod
+  itemId: 123
+  indentLevel: 0
+  targetObject: {fileID: 906997174}
+  methodName: ShowNusaUI
+  delay: 0
+--- !u!114 &906997298
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 906997174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Fungus::Fungus.CallMethod
+  itemId: 122
+  indentLevel: 0
+  targetObject: {fileID: 906997174}
+  methodName: ShowNusaUI
+  delay: 0
+--- !u!114 &906997299
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 906997174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Fungus::Fungus.CallMethod
+  itemId: 121
+  indentLevel: 0
+  targetObject: {fileID: 906997174}
+  methodName: HideNusaUI
+  delay: 0
+--- !u!114 &906997300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 906997174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5fb6ea163f38ef4caf45965c4fd5aa3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FungusUIManager
 --- !u!1 &969802640
 GameObject:
   m_ObjectHideFlags: 0
@@ -8317,7 +8605,7 @@ Transform:
   m_GameObject: {fileID: 1005264701}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -13, y: -15, z: 0}
+  m_LocalPosition: {x: -13.03, y: -16.16, z: 0}
   m_LocalScale: {x: 3.9711797, y: 1.9975303, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8605,7 +8893,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000018477, y: 191}
+  m_AnchoredPosition: {x: -0.000018477, y: 2}
   m_SizeDelta: {x: 1300, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1098125565
@@ -9100,7 +9388,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nameText: Serunai Spirit
-  nameColor: {r: 0.33773577, g: 0.5357765, b: 1, a: 1}
+  nameColor: {r: 1, g: 1, b: 1, a: 1}
   soundEffect: {fileID: 0}
   portraits:
   - {fileID: -6150243784136745721, guid: 2a9e196fc8322294f8a8ac9b49817c65, type: 3}
@@ -9722,7 +10010,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.27646503, y: 0.09748912}
+  m_Offset: {x: 0.029895544, y: 0.09748912}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -9732,7 +10020,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.8095162, y: 3.8090205}
+  m_Size: {x: 1.6355333, y: 3.8090205}
   m_EdgeRadius: 0
 --- !u!114 &1382846768
 MonoBehaviour:
@@ -9812,7 +10100,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 9
   m_MaskInteraction: 0
   m_Sprite: {fileID: -6150243784136745721, guid: 2a9e196fc8322294f8a8ac9b49817c65, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -9836,9 +10124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8c6643349777d14e9afb32ddb3ac7be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StatueSkillManager
-  flowchart: {fileID: 0}
-  allUnlockedBlockName: AllSkillsUnlocked
-  notUnlockedBlockName: SayNotEnough
+  flowchart: {fileID: 906997200}
 --- !u!1 &1452475153
 GameObject:
   m_ObjectHideFlags: 0
@@ -9953,7 +10239,7 @@ MonoBehaviour:
   portraits:
   - {fileID: -2256948484998397059, guid: 41bd4e5889b33df4bbab76ca1e283894, type: 3}
   portraitsFace: 0
-  setSayDialog: {fileID: 0}
+  setSayDialog: {fileID: 1503815789}
   description: 
 --- !u!4 &1482187544
 Transform:
@@ -10171,11 +10457,11 @@ MonoBehaviour:
   targetAudioSource: {fileID: 0}
   audioMode: 0
   beepSounds:
-  - {fileID: 8300000, guid: 774486030b696474e8b3cf7f178123da, type: 3}
-  - {fileID: 8300000, guid: f637c5ce9d10e45c7855ed89bfc6b97e, type: 3}
-  - {fileID: 8300000, guid: c53b7c20372e444c6bd7f2ac0729bbe2, type: 3}
+  - {fileID: 8300000, guid: 25557fcad21af154a8f9ffca032de11e, type: 3}
+  - {fileID: 8300000, guid: 25557fcad21af154a8f9ffca032de11e, type: 3}
+  - {fileID: 8300000, guid: 25557fcad21af154a8f9ffca032de11e, type: 3}
   soundEffect: {fileID: 0}
-  inputSound: {fileID: 8300000, guid: 14a396b1562834718b2d52b9c4639264, type: 3}
+  inputSound: {fileID: 8300000, guid: ba2b5d8a58c2aeb48ad9259f938f4067, type: 3}
 --- !u!114 &1503815794
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10468,8 +10754,8 @@ Transform:
   m_GameObject: {fileID: 1543929806}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.9608, y: -4.0646, z: 0}
-  m_LocalScale: {x: 0.3740479, y: 0.29165214, z: 1}
+  m_LocalPosition: {x: -2.4953, y: -5.0148, z: 0}
+  m_LocalScale: {x: 0.19017278, y: 0.1502592, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1775161860}
@@ -10521,7 +10807,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 9
   m_MaskInteraction: 0
   m_Sprite: {fileID: -2256948484998397059, guid: 41bd4e5889b33df4bbab76ca1e283894, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -10594,7 +10880,7 @@ MonoBehaviour:
   promptMessage: Press NPC to Interact
   promptIcon: {fileID: 0}
   targetFlowchart: {fileID: 906997200}
-  targetBlockName: Dialogue05
+  targetBlockName: Dialogue5
   onInteracted:
     m_PersistentCalls:
       m_Calls:
@@ -10610,6 +10896,63 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!1001 &1571258476
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3016329963242039333, guid: 94ca1047fcc72a9498e0f2ab505dc623, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.67494
+      objectReference: {fileID: 0}
+    - target: {fileID: 3016329963242039333, guid: 94ca1047fcc72a9498e0f2ab505dc623, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.1787
+      objectReference: {fileID: 0}
+    - target: {fileID: 3016329963242039333, guid: 94ca1047fcc72a9498e0f2ab505dc623, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3016329963242039333, guid: 94ca1047fcc72a9498e0f2ab505dc623, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3016329963242039333, guid: 94ca1047fcc72a9498e0f2ab505dc623, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3016329963242039333, guid: 94ca1047fcc72a9498e0f2ab505dc623, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3016329963242039333, guid: 94ca1047fcc72a9498e0f2ab505dc623, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3016329963242039333, guid: 94ca1047fcc72a9498e0f2ab505dc623, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3016329963242039333, guid: 94ca1047fcc72a9498e0f2ab505dc623, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3016329963242039333, guid: 94ca1047fcc72a9498e0f2ab505dc623, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8077687289190682968, guid: 94ca1047fcc72a9498e0f2ab505dc623, type: 3}
+      propertyPath: m_Name
+      value: BGM
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 94ca1047fcc72a9498e0f2ab505dc623, type: 3}
 --- !u!1 &1574523453
 GameObject:
   m_ObjectHideFlags: 0
@@ -10792,7 +11135,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78708fb83c88ba8469dda028cdb7aedb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerSpawnPoint
-  pointID: CHR to CHM
+  pointID: 2
 --- !u!1 &1634313097
 GameObject:
   m_ObjectHideFlags: 0
@@ -10963,7 +11306,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScenePortal
   targetSceneName: Ceremony Hall Right (CHR)
-  targetSpawnID: CHM to CHR
+  targetSpawnID: 1
 --- !u!61 &1685466441
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -24139,7 +24482,7 @@ Transform:
   m_GameObject: {fileID: 2130918019}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.27, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -24198,7 +24541,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.5969774, y: 0.053587317}
+  m_Offset: {x: 0.17517132, y: 0.053587317}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -24208,7 +24551,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.4213418, y: 1.0868604}
+  m_Size: {x: 0.9367137, y: 1.0868604}
   m_EdgeRadius: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
@@ -24234,3 +24577,4 @@ SceneRoots:
   - {fileID: 1603197685}
   - {fileID: 1775161860}
   - {fileID: 2042839047}
+  - {fileID: 1571258476}

@@ -129,8 +129,8 @@ GameObject:
   m_Component:
   - component: {fileID: 26148903}
   - component: {fileID: 26148904}
-  - component: {fileID: 26148907}
   - component: {fileID: 26148906}
+  - component: {fileID: 26148907}
   - component: {fileID: 26148908}
   - component: {fileID: 26148905}
   m_Layer: 0
@@ -149,7 +149,7 @@ Transform:
   m_GameObject: {fileID: 26148902}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6, y: -32.39, z: 0}
+  m_LocalPosition: {x: 6.14, y: -31.84, z: 0}
   m_LocalScale: {x: 0.13678834, y: 0.18714394, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -330,7 +330,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5cae935b81cd0844af75883b17e0b8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InteractableObject
-  promptMessage: Press  to Interact
+  promptMessage: Press     to Interact
   promptIcon: {fileID: -4468560251275224205, guid: 946d462001a0ebf42a6982c2dfea1e50, type: 3}
   targetFlowchart: {fileID: 0}
   targetBlockName: Start
@@ -894,11 +894,11 @@ MonoBehaviour:
   targetAudioSource: {fileID: 0}
   audioMode: 0
   beepSounds:
-  - {fileID: 8300000, guid: 774486030b696474e8b3cf7f178123da, type: 3}
-  - {fileID: 8300000, guid: f637c5ce9d10e45c7855ed89bfc6b97e, type: 3}
-  - {fileID: 8300000, guid: c53b7c20372e444c6bd7f2ac0729bbe2, type: 3}
+  - {fileID: 8300000, guid: 25557fcad21af154a8f9ffca032de11e, type: 3}
+  - {fileID: 8300000, guid: 25557fcad21af154a8f9ffca032de11e, type: 3}
+  - {fileID: 8300000, guid: 25557fcad21af154a8f9ffca032de11e, type: 3}
   soundEffect: {fileID: 0}
-  inputSound: {fileID: 8300000, guid: 14a396b1562834718b2d52b9c4639264, type: 3}
+  inputSound: {fileID: 8300000, guid: ba2b5d8a58c2aeb48ad9259f938f4067, type: 3}
 --- !u!114 &90107166
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2208,7 +2208,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.06718111}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -2218,7 +2218,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1, y: 2.268983}
   m_EdgeRadius: 0
 --- !u!1 &393443143
 GameObject:
@@ -3075,6 +3075,63 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!1001 &486772994
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3016329963242039333, guid: 94ca1047fcc72a9498e0f2ab505dc623, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.67494
+      objectReference: {fileID: 0}
+    - target: {fileID: 3016329963242039333, guid: 94ca1047fcc72a9498e0f2ab505dc623, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.1787
+      objectReference: {fileID: 0}
+    - target: {fileID: 3016329963242039333, guid: 94ca1047fcc72a9498e0f2ab505dc623, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3016329963242039333, guid: 94ca1047fcc72a9498e0f2ab505dc623, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3016329963242039333, guid: 94ca1047fcc72a9498e0f2ab505dc623, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3016329963242039333, guid: 94ca1047fcc72a9498e0f2ab505dc623, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3016329963242039333, guid: 94ca1047fcc72a9498e0f2ab505dc623, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3016329963242039333, guid: 94ca1047fcc72a9498e0f2ab505dc623, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3016329963242039333, guid: 94ca1047fcc72a9498e0f2ab505dc623, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3016329963242039333, guid: 94ca1047fcc72a9498e0f2ab505dc623, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8077687289190682968, guid: 94ca1047fcc72a9498e0f2ab505dc623, type: 3}
+      propertyPath: m_Name
+      value: BGM
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 94ca1047fcc72a9498e0f2ab505dc623, type: 3}
 --- !u!1 &516983656
 GameObject:
   m_ObjectHideFlags: 0
@@ -3774,7 +3831,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.28494573}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -3784,7 +3841,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1, y: 2.7334194}
   m_EdgeRadius: 0
 --- !u!1 &720120829
 GameObject:
@@ -3830,7 +3887,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78708fb83c88ba8469dda028cdb7aedb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerSpawnPoint
-  pointID: FLMFLL
+  pointID: FLM to FLL
 --- !u!1 &769666229
 GameObject:
   m_ObjectHideFlags: 0
@@ -4666,7 +4723,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.6451855, y: 0.43773365}
+  m_Offset: {x: -0.6451855, y: 0.14565659}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -4676,7 +4733,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 20.312782, y: 13.281944}
+  m_Size: {x: 20.312782, y: 13.866098}
   m_EdgeRadius: 0
 --- !u!114 &938056107
 MonoBehaviour:
@@ -4692,7 +4749,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::InteractableObject
   promptMessage: Press NPC to Interact
   promptIcon: {fileID: 0}
-  targetFlowchart: {fileID: 0}
+  targetFlowchart: {fileID: 1398033651}
   targetBlockName: Dialogue7
   onInteracted:
     m_PersistentCalls:
@@ -4756,7 +4813,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 9
   m_MaskInteraction: 0
   m_Sprite: {fileID: -2256948484998397059, guid: 41bd4e5889b33df4bbab76ca1e283894, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -4777,8 +4834,8 @@ Transform:
   m_GameObject: {fileID: 938056105}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.08, y: -27.09, z: 0}
-  m_LocalScale: {x: 0.28768, y: 0.27971, z: 1}
+  m_LocalPosition: {x: 6.4823, y: -27.9796, z: 0}
+  m_LocalScale: {x: 0.18549606, y: 0.14779572, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -5088,7 +5145,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000018477, y: 191}
+  m_AnchoredPosition: {x: -0.000018477, y: -43}
   m_SizeDelta: {x: 1300, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1048788404
@@ -6134,7 +6191,7 @@ Transform:
   m_GameObject: {fileID: 1261821729}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.02, y: -33.36, z: 0}
+  m_LocalPosition: {x: 2.02, y: -32.65, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6152,7 +6209,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78708fb83c88ba8469dda028cdb7aedb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerSpawnPoint
-  pointID: FLM to FLB
+  pointID: FLB to FLL
 --- !u!1 &1269230757
 GameObject:
   m_ObjectHideFlags: 1
@@ -7019,6 +7076,9 @@ GameObject:
   - component: {fileID: 1398033654}
   - component: {fileID: 1398033653}
   - component: {fileID: 1398033652}
+  - component: {fileID: 1398033659}
+  - component: {fileID: 1398033658}
+  - component: {fileID: 1398033657}
   m_Layer: 0
   m_Name: FungusController
   m_TagString: Untagged
@@ -7069,7 +7129,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Fungus::Fungus.Flowchart
   version: 1
-  scrollPos: {x: 100.5896, y: 248.52255}
+  scrollPos: {x: 128.3447, y: 310.56342}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 400
@@ -7080,10 +7140,8 @@ MonoBehaviour:
     y: 0
     width: 0
     height: 0
-  selectedBlocks:
-  - {fileID: 1398033656}
-  selectedCommands:
-  - {fileID: 1398033652}
+  selectedBlocks: []
+  selectedCommands: []
   variables:
   - {fileID: 1398033650}
   description: 
@@ -7098,7 +7156,7 @@ MonoBehaviour:
   luaBindingName: flowchart
 --- !u!114 &1398033652
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -7128,7 +7186,7 @@ MonoBehaviour:
   waitUntilFinished: 0
 --- !u!114 &1398033653
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -7156,7 +7214,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 2003863919}
 --- !u!114 &1398033654
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -7184,7 +7242,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 2003863919}
 --- !u!114 &1398033655
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -7214,7 +7272,7 @@ MonoBehaviour:
   waitUntilFinished: 0
 --- !u!114 &1398033656
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -7237,11 +7295,59 @@ MonoBehaviour:
   description: 
   eventHandler: {fileID: 0}
   commandList:
+  - {fileID: 1398033658}
   - {fileID: 1398033655}
   - {fileID: 1398033654}
   - {fileID: 1398033653}
   - {fileID: 1398033652}
+  - {fileID: 1398033657}
   suppressAllAutoSelections: 0
+--- !u!114 &1398033657
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1398033626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Fungus::Fungus.CallMethod
+  itemId: 6
+  indentLevel: 0
+  targetObject: {fileID: 1398033626}
+  methodName: ShowNusaUI
+  delay: 0
+--- !u!114 &1398033658
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1398033626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Fungus::Fungus.CallMethod
+  itemId: 5
+  indentLevel: 0
+  targetObject: {fileID: 1398033626}
+  methodName: HideNusaUI
+  delay: 0
+--- !u!114 &1398033659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1398033626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5fb6ea163f38ef4caf45965c4fd5aa3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FungusUIManager
 --- !u!1 &1405344737
 GameObject:
   m_ObjectHideFlags: 0
@@ -7939,8 +8045,8 @@ Transform:
   m_GameObject: {fileID: 1587160126}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.39, y: -16.0533, z: 0}
-  m_LocalScale: {x: 0.13152668, y: 0.2002592, z: 1}
+  m_LocalPosition: {x: 6.39, y: -15.7348, z: 0}
+  m_LocalScale: {x: 0.13152668, y: 0.17881143, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 144052124}
@@ -8046,7 +8152,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -8120,7 +8226,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5cae935b81cd0844af75883b17e0b8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InteractableObject
-  promptMessage: Press  to Interact
+  promptMessage: Press     to Interact
   promptIcon: {fileID: -4468560251275224205, guid: 946d462001a0ebf42a6982c2dfea1e50, type: 3}
   targetFlowchart: {fileID: 0}
   targetBlockName: Start
@@ -8245,7 +8351,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.23945522}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -8255,7 +8361,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1, y: 2.6141033}
   m_EdgeRadius: 0
 --- !u!1 &1672069506
 GameObject:
@@ -11280,11 +11386,11 @@ MonoBehaviour:
   targetAudioSource: {fileID: 0}
   audioMode: 0
   beepSounds:
-  - {fileID: 8300000, guid: 774486030b696474e8b3cf7f178123da, type: 3}
-  - {fileID: 8300000, guid: f637c5ce9d10e45c7855ed89bfc6b97e, type: 3}
-  - {fileID: 8300000, guid: c53b7c20372e444c6bd7f2ac0729bbe2, type: 3}
+  - {fileID: 8300000, guid: 25557fcad21af154a8f9ffca032de11e, type: 3}
+  - {fileID: 8300000, guid: 25557fcad21af154a8f9ffca032de11e, type: 3}
+  - {fileID: 8300000, guid: 25557fcad21af154a8f9ffca032de11e, type: 3}
   soundEffect: {fileID: 0}
-  inputSound: {fileID: 8300000, guid: 14a396b1562834718b2d52b9c4639264, type: 3}
+  inputSound: {fileID: 8300000, guid: ba2b5d8a58c2aeb48ad9259f938f4067, type: 3}
 --- !u!114 &2003863924
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11483,7 +11589,7 @@ Transform:
   m_GameObject: {fileID: 2014275978}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.46, y: 2.89, z: 0}
+  m_LocalPosition: {x: -7.75, y: 2.89, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11501,7 +11607,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78708fb83c88ba8469dda028cdb7aedb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerSpawnPoint
-  pointID: CHRFLL
+  pointID: CHR to FLL
 --- !u!1 &2114307520
 GameObject:
   m_ObjectHideFlags: 0
@@ -11780,3 +11886,4 @@ SceneRoots:
   - {fileID: 1300567655}
   - {fileID: 1488235076}
   - {fileID: 938056109}
+  - {fileID: 486772994}

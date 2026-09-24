@@ -1,0 +1,413 @@
+fileFormatVersion: 2
+guid: 3526f9bb9e7e575468e9c2af96f3ba07
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8457685897521642056
+    second: puzzle triangle_0
+  - first:
+      213: -8086746157779662548
+    second: puzzle triangle_1
+  - first:
+      213: -4645834739187872057
+    second: puzzle triangle_2
+  - first:
+      213: 4064012854410893735
+    second: puzzle triangle_3
+  - first:
+      213: 4223204927142830251
+    second: puzzle triangle_4
+  - first:
+      213: -3191161187163374835
+    second: puzzle triangle_5
+  - first:
+      213: -1762886517283332578
+    second: puzzle triangle_6
+  - first:
+      213: 2158232258559100652
+    second: puzzle triangle_7
+  - first:
+      213: 6740161010272926652
+    second: puzzle triangle_8
+  - first:
+      213: -6787278140894628004
+    second: puzzle triangle_9
+  - first:
+      213: -202440819743961362
+    second: puzzle triangle_10
+  - first:
+      213: -481438461683958421
+    second: puzzle triangle_11
+  - first:
+      213: 4279463396347077578
+    second: puzzle triangle_12
+  - first:
+      213: 998334477678309749
+    second: puzzle triangle_13
+  - first:
+      213: -2970666924029504413
+    second: puzzle triangle_14
+  - first:
+      213: 1469239874638882538
+    second: puzzle triangle_15
+  - first:
+      213: -1034089034903165272
+    second: puzzle triangle_16
+  - first:
+      213: 2586243845911837218
+    second: puzzle triangle_17
+  - first:
+      213: -3450676040917009124
+    second: puzzle triangle_18
+  - first:
+      213: -6816364631736268440
+    second: puzzle triangle_19
+  - first:
+      213: 2034362775381040893
+    second: puzzle triangle_20
+  - first:
+      213: -1734739973345804825
+    second: puzzle triangle_21
+  - first:
+      213: -8920153697542727878
+    second: puzzle triangle_22
+  - first:
+      213: 2113527768853222262
+    second: puzzle triangle_23
+  - first:
+      213: -1359820905549026676
+    second: puzzle triangle_24
+  - first:
+      213: -1684654498019466294
+    second: puzzle triangle_25
+  - first:
+      213: 2968514818547912731
+    second: puzzle triangle_26
+  - first:
+      213: -2561143468146379002
+    second: puzzle triangle_27
+  - first:
+      213: 439059676177774383
+    second: puzzle triangle_28
+  - first:
+      213: -4868661341061028187
+    second: puzzle triangle_29
+  - first:
+      213: -1404905169564349122
+    second: puzzle triangle_30
+  - first:
+      213: 1004467085046443212
+    second: puzzle triangle_31
+  - first:
+      213: 1937357579260011892
+    second: puzzle triangle_32
+  - first:
+      213: 3388165363422770869
+    second: puzzle triangle_33
+  - first:
+      213: 8600669135286336891
+    second: puzzle triangle_34
+  - first:
+      213: -9040857115823899490
+    second: puzzle triangle_35
+  - first:
+      213: -8295585545937187559
+    second: puzzle triangle_36
+  - first:
+      213: -6023431076043223667
+    second: puzzle triangle_37
+  - first:
+      213: 4774877755340239594
+    second: puzzle triangle_38
+  - first:
+      213: 1135852553181227849
+    second: puzzle triangle_39
+  - first:
+      213: -6521500522472682536
+    second: puzzle triangle_40
+  - first:
+      213: -7301660729988604409
+    second: puzzle triangle_41
+  - first:
+      213: 1902384582296879290
+    second: puzzle triangle_42
+  - first:
+      213: 5595915535171478287
+    second: puzzle triangle_43
+  - first:
+      213: 1848900590865853768
+    second: puzzle triangle_44
+  - first:
+      213: 8281870373290287243
+    second: puzzle triangle_45
+  - first:
+      213: 8678571353963559208
+    second: puzzle triangle_46
+  - first:
+      213: -7329408273372068271
+    second: puzzle triangle_47
+  - first:
+      213: 6982667540631162127
+    second: puzzle triangle_48
+  - first:
+      213: 6609603696623312911
+    second: puzzle triangle_49
+  - first:
+      213: -1810346611208498798
+    second: puzzle triangle_50
+  - first:
+      213: -6122317925909829933
+    second: puzzle triangle_51
+  - first:
+      213: 6753434568034411212
+    second: puzzle triangle_52
+  - first:
+      213: 2391174535935768766
+    second: puzzle triangle_53
+  - first:
+      213: -820045521151343696
+    second: puzzle triangle_54
+  - first:
+      213: -6872685320461767821
+    second: puzzle triangle_55
+  - first:
+      213: -3567006992028353229
+    second: puzzle triangle_56
+  - first:
+      213: 2017970798179586794
+    second: puzzle triangle_57
+  - first:
+      213: 5317598547601062138
+    second: puzzle triangle_58
+  - first:
+      213: -1064721827161861800
+    second: puzzle triangle_59
+  - first:
+      213: -5856012774563208834
+    second: puzzle triangle_60
+  - first:
+      213: 4449116314889887593
+    second: puzzle triangle_61
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: puzzle triangle_4
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 280
+        width: 686
+        height: 645
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba027087186db9a30800000000000000
+      internalID: 4223204927142830251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 67ba223f1be97b54bb00ac4df58e855b
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      puzzle triangle_0: 8457685897521642056
+      puzzle triangle_1: -8086746157779662548
+      puzzle triangle_10: -202440819743961362
+      puzzle triangle_11: -481438461683958421
+      puzzle triangle_12: 4279463396347077578
+      puzzle triangle_13: 998334477678309749
+      puzzle triangle_14: -2970666924029504413
+      puzzle triangle_15: 1469239874638882538
+      puzzle triangle_16: -1034089034903165272
+      puzzle triangle_17: 2586243845911837218
+      puzzle triangle_18: -3450676040917009124
+      puzzle triangle_19: -6816364631736268440
+      puzzle triangle_2: -4645834739187872057
+      puzzle triangle_20: 2034362775381040893
+      puzzle triangle_21: -1734739973345804825
+      puzzle triangle_22: -8920153697542727878
+      puzzle triangle_23: 2113527768853222262
+      puzzle triangle_24: -1359820905549026676
+      puzzle triangle_25: -1684654498019466294
+      puzzle triangle_26: 2968514818547912731
+      puzzle triangle_27: -2561143468146379002
+      puzzle triangle_28: 439059676177774383
+      puzzle triangle_29: -4868661341061028187
+      puzzle triangle_3: 4064012854410893735
+      puzzle triangle_30: -1404905169564349122
+      puzzle triangle_31: 1004467085046443212
+      puzzle triangle_32: 1937357579260011892
+      puzzle triangle_33: 3388165363422770869
+      puzzle triangle_34: 8600669135286336891
+      puzzle triangle_35: -9040857115823899490
+      puzzle triangle_36: -8295585545937187559
+      puzzle triangle_37: -6023431076043223667
+      puzzle triangle_38: 4774877755340239594
+      puzzle triangle_39: 1135852553181227849
+      puzzle triangle_4: 4223204927142830251
+      puzzle triangle_40: -6521500522472682536
+      puzzle triangle_41: -7301660729988604409
+      puzzle triangle_42: 1902384582296879290
+      puzzle triangle_43: 5595915535171478287
+      puzzle triangle_44: 1848900590865853768
+      puzzle triangle_45: 8281870373290287243
+      puzzle triangle_46: 8678571353963559208
+      puzzle triangle_47: -7329408273372068271
+      puzzle triangle_48: 6982667540631162127
+      puzzle triangle_49: 6609603696623312911
+      puzzle triangle_5: -3191161187163374835
+      puzzle triangle_50: -1810346611208498798
+      puzzle triangle_51: -6122317925909829933
+      puzzle triangle_52: 6753434568034411212
+      puzzle triangle_53: 2391174535935768766
+      puzzle triangle_54: -820045521151343696
+      puzzle triangle_55: -6872685320461767821
+      puzzle triangle_56: -3567006992028353229
+      puzzle triangle_57: 2017970798179586794
+      puzzle triangle_58: 5317598547601062138
+      puzzle triangle_59: -1064721827161861800
+      puzzle triangle_6: -1762886517283332578
+      puzzle triangle_60: -5856012774563208834
+      puzzle triangle_61: 4449116314889887593
+      puzzle triangle_7: 2158232258559100652
+      puzzle triangle_8: 6740161010272926652
+      puzzle triangle_9: -6787278140894628004
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

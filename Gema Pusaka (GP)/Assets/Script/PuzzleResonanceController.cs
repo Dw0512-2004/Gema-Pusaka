@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
 
+[RequireComponent(typeof(AudioSource))]
 public class PuzzleResonanceController : MonoBehaviour
 {
     [Header("UI 滑桿引用")]
@@ -30,6 +31,11 @@ public class PuzzleResonanceController : MonoBehaviour
     [Tooltip("需要維持在共鳴區內的時間 (秒)")]
     public float requiredHoldTime = 3f;
 
+    [Header("音效設定")]
+    [Tooltip("解謎成功時播放的音效")]
+    public AudioClip successSound;
+    private AudioSource audioSource;
+
     [Header("Fungus 聯動設定")]
     [Tooltip("解謎成功後要廣播的 Fungus Message")]
     public string successMessage = "Puzzle2_Win";
@@ -38,20 +44,23 @@ public class PuzzleResonanceController : MonoBehaviour
     private float holdTimer = 0f;
     private bool isSolved = false;
 
+    private void Awake()
+    {
+        // 自動抓取掛在同一個物件上的 AudioSource
+        audioSource = GetComponent<AudioSource>();
+    }
+
     private void Update()
     {
         if (isSolved) return;
 
-        // 1. 取得滑桿數值 (假設 Slider 設定為 0 到 1)
+        // 1. 取得滑桿數值
         float breath = breathSlider.value;
         float weight = weightSlider.value;
         float tempo = tempoSlider.value;
 
         // 2. 計算指針目標位置 
-        // 公式邏輯：氣息讓指針往右，重量讓指針往左，節奏提供微調
         float balanceFactor = (breath * 1.5f) - (weight * 1.5f) + (tempo * 0.5f) - 0.25f;
-        
-        // 將計算結果映射到 X 座標範圍內
         float targetX = Mathf.Clamp(balanceFactor * 200f, minX, maxX);
 
         // 3. 讓指針平滑移動到目標位置
@@ -62,7 +71,6 @@ public class PuzzleResonanceController : MonoBehaviour
         float indicatorX = indicator.anchoredPosition.x;
         if (indicatorX >= targetMinX && indicatorX <= targetMaxX)
         {
-            // 在安全區內，累積時間
             holdTimer += Time.deltaTime;
             
             if (holdTimer >= requiredHoldTime)
@@ -72,7 +80,6 @@ public class PuzzleResonanceController : MonoBehaviour
         }
         else
         {
-            // 離開安全區，進度快速倒退
             holdTimer = Mathf.Max(0, holdTimer - Time.deltaTime * 1.5f);
         }
 
@@ -87,6 +94,12 @@ public class PuzzleResonanceController : MonoBehaviour
     {
         isSolved = true;
         Debug.Log("<color=green>【解謎成功】靈魂共鳴達成！</color>");
+
+        // 播放專屬的成功音效
+        if (successSound != null && audioSource != null)
+        {
+            audioSource.PlayOneShot(successSound);
+        }
 
         // 廣播 Fungus 事件
         if (!string.IsNullOrEmpty(successMessage))
@@ -105,11 +118,8 @@ public class PuzzleResonanceController : MonoBehaviour
         holdTimer = 0f;
         if (progressBar != null) progressBar.fillAmount = 0f;
         
-        // 【修改這裡】：刻意設定極端的不平衡數值，讓玩家必須自己動手調
-        if (breathSlider) breathSlider.value = 0.9f;  // 氣息過強
-        if (weightSlider) weightSlider.value = 0.1f;  // 重量過輕
-        if (tempoSlider) tempoSlider.value = 0.2f;    // 節奏偏慢
-        
-        // 這樣指標一開始會跑到最右邊，遠離中央的綠區
+        if (breathSlider) breathSlider.value = 0.9f; 
+        if (weightSlider) weightSlider.value = 0.1f; 
+        if (tempoSlider) tempoSlider.value = 0.2f;    
     }
 }

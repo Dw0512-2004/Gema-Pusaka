@@ -441,6 +441,63 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!1001 &474608027
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3016329963242039333, guid: 94ca1047fcc72a9498e0f2ab505dc623, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.67494
+      objectReference: {fileID: 0}
+    - target: {fileID: 3016329963242039333, guid: 94ca1047fcc72a9498e0f2ab505dc623, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.1787
+      objectReference: {fileID: 0}
+    - target: {fileID: 3016329963242039333, guid: 94ca1047fcc72a9498e0f2ab505dc623, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3016329963242039333, guid: 94ca1047fcc72a9498e0f2ab505dc623, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3016329963242039333, guid: 94ca1047fcc72a9498e0f2ab505dc623, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3016329963242039333, guid: 94ca1047fcc72a9498e0f2ab505dc623, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3016329963242039333, guid: 94ca1047fcc72a9498e0f2ab505dc623, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3016329963242039333, guid: 94ca1047fcc72a9498e0f2ab505dc623, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3016329963242039333, guid: 94ca1047fcc72a9498e0f2ab505dc623, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3016329963242039333, guid: 94ca1047fcc72a9498e0f2ab505dc623, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8077687289190682968, guid: 94ca1047fcc72a9498e0f2ab505dc623, type: 3}
+      propertyPath: m_Name
+      value: BGM
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 94ca1047fcc72a9498e0f2ab505dc623, type: 3}
 --- !u!1 &594191785
 GameObject:
   m_ObjectHideFlags: 0
@@ -1186,11 +1243,11 @@ MonoBehaviour:
   targetAudioSource: {fileID: 0}
   audioMode: 0
   beepSounds:
-  - {fileID: 8300000, guid: 774486030b696474e8b3cf7f178123da, type: 3}
-  - {fileID: 8300000, guid: f637c5ce9d10e45c7855ed89bfc6b97e, type: 3}
-  - {fileID: 8300000, guid: c53b7c20372e444c6bd7f2ac0729bbe2, type: 3}
+  - {fileID: 8300000, guid: 25557fcad21af154a8f9ffca032de11e, type: 3}
+  - {fileID: 8300000, guid: 25557fcad21af154a8f9ffca032de11e, type: 3}
+  - {fileID: 8300000, guid: 25557fcad21af154a8f9ffca032de11e, type: 3}
   soundEffect: {fileID: 0}
-  inputSound: {fileID: 8300000, guid: 14a396b1562834718b2d52b9c4639264, type: 3}
+  inputSound: {fileID: 8300000, guid: ba2b5d8a58c2aeb48ad9259f938f4067, type: 3}
 --- !u!114 &1175711534
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4063,3 +4120,4 @@ SceneRoots:
   - {fileID: 1613446933}
   - {fileID: 1165469134}
   - {fileID: 861282528}
+  - {fileID: 474608027}

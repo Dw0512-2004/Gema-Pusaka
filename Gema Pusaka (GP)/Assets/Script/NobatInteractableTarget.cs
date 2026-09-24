@@ -14,6 +14,17 @@ public class NobatInteractableTarget : MonoBehaviour
     private bool isAlreadySolved = false;
     private bool isWaitingForAudio = false; // 新增：防止等待音效時重複觸發
 
+    // --- 新增：組件引用 ---
+    private Collider2D obstacleCollider;
+    private SpriteRenderer obstacleSprite;
+
+    private void Awake()
+    {
+        // 遊戲開始時自動抓取掛在同一個物件上的 Collider 和 SpriteRenderer
+        obstacleCollider = GetComponent<Collider2D>();
+        obstacleSprite = GetComponent<SpriteRenderer>();
+    }
+
     // 訂閱與取消訂閱全域技能事件 (最佳實踐，防止記憶體洩漏)
     private void OnEnable()
     {
@@ -81,6 +92,12 @@ public class NobatInteractableTarget : MonoBehaviour
         isAlreadySolved = true;
         Debug.Log("<color=yellow>【Nobat 目標】封印解除 / 記憶恢復！</color>");
         
+        // ==========================================
+        // 🌟 新增：解謎成功後關閉碰撞體和圖片
+        // ==========================================
+        if (obstacleCollider != null) obstacleCollider.enabled = false;
+        if (obstacleSprite != null) obstacleSprite.enabled = false;
+
         // 觸發你在 Inspector 裡設定的 UnityEvent (例如播放門打開的動畫，或呼叫 Fungus 對話)
         OnPuzzleSolved?.Invoke();
     }

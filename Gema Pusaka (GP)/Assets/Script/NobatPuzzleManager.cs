@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
+using TMPro; // 引入 TextMeshPro
 
 public class NobatPuzzleManager : MonoBehaviour
 {
@@ -12,6 +13,11 @@ public class NobatPuzzleManager : MonoBehaviour
     public GameObject puzzlePanel;
     [Tooltip("0: Serunai, 1: Gong, 2: Gendang")]
     public Button[] instrumentButtons; 
+    
+    [Header("UI 提示文字")]
+    public TextMeshProUGUI promptText; // 新增：用於顯示進度或錯誤訊息
+    public Color normalTextColor = Color.white;
+    public Color errorTextColor = Color.red;
 
     [Header("音频设置")]
     public AudioSource audioSource;
@@ -46,6 +52,13 @@ public class NobatPuzzleManager : MonoBehaviour
         puzzlePanel.SetActive(true);
         currentRound = 0; 
         
+        // 初始化提示文字
+        if (promptText != null) 
+        {
+            promptText.text = "0/3";
+            promptText.color = normalTextColor;
+        }
+        
         if (NusaController.Instance != null) NusaController.Instance.DisableMovement();
 
         StartCoroutine(StartRoundSequence());
@@ -54,6 +67,14 @@ public class NobatPuzzleManager : MonoBehaviour
     private IEnumerator StartRoundSequence()
     {
         isPlayerTurn = false;
+        
+        // 如果畫面上目前是顯示失敗訊息，在新回合開始前清除它（保留成功進度）
+        if (promptText != null && promptText.text == "Please try again")
+        {
+            promptText.text = currentRound + "/3";
+            promptText.color = normalTextColor;
+        }
+
         yield return new WaitForSeconds(1.0f); // 準備時間
 
         GenerateRandomSequence();
@@ -111,6 +132,13 @@ public class NobatPuzzleManager : MonoBehaviour
                 if (successSound != null) audioSource.PlayOneShot(successSound);
                 currentRound++;
 
+                // 🌟 新增：顯示成功進度
+                if (promptText != null)
+                {
+                    promptText.color = normalTextColor;
+                    promptText.text = currentRound + "/3";
+                }
+
                 // 連續成功3次 (過關)
                 if (currentRound >= 3)
                 {
@@ -135,6 +163,13 @@ public class NobatPuzzleManager : MonoBehaviour
         {
             if (errorSound != null) audioSource.PlayOneShot(errorSound);
             
+            // 🌟 新增：顯示失敗提示
+            if (promptText != null)
+            {
+                promptText.color = errorTextColor;
+                promptText.text = "Please try again";
+            }
+
             foreach (Button btn in instrumentButtons)
             {
                 btn.GetComponent<Image>().color = wrongColor;
@@ -154,7 +189,7 @@ public class NobatPuzzleManager : MonoBehaviour
         }
     }
 
-    // 【核心修改】：移除固定的 duration，改為動態獲取音效長度
+    // 動態獲取音效長度
     private IEnumerator FlashButton(int index, Color flashColor)
     {
         Image btnImage = instrumentButtons[index].GetComponent<Image>();

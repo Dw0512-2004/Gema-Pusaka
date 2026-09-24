@@ -158,6 +158,14 @@ public class SkillManager : MonoBehaviour
         {
             NusaController.Instance.DisableMovement();
         }
+
+        // ==========================================
+        // 🌟 新增：打开面板时，暂时隐藏提示文字
+        // ==========================================
+        if (NusaPromptManager.Instance != null)
+        {
+            NusaPromptManager.Instance.SuppressPrompt();
+        }
     }
 
     public void HidePanel()
@@ -167,6 +175,14 @@ public class SkillManager : MonoBehaviour
         if (NusaController.Instance != null)
         {
             NusaController.Instance.EnableMovement();
+        }
+
+        // ==========================================
+        // 🌟 新增：关闭面板时，恢复提示文字
+        // ==========================================
+        if (NusaPromptManager.Instance != null)
+        {
+            NusaPromptManager.Instance.RestorePrompt();
         }
     }
 
