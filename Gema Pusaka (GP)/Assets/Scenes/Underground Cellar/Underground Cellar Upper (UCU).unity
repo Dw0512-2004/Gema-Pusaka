@@ -1293,7 +1293,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 5.625
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -5616,7 +5616,7 @@ Transform:
   m_GameObject: {fileID: 1169813298}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13.5016, y: 0.984, z: 0}
+  m_LocalPosition: {x: 13.14, y: -2.92, z: 0}
   m_LocalScale: {x: 0.18839094, y: 0.15461372, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6777,8 +6777,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1271072884}
   - component: {fileID: 1271072885}
-  - component: {fileID: 1271072888}
   - component: {fileID: 1271072887}
+  - component: {fileID: 1271072888}
   - component: {fileID: 1271072886}
   - component: {fileID: 1271072889}
   m_Layer: 0
@@ -6908,7 +6908,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.027432442, y: -1.0637321}
+  m_Offset: {x: 11.473511, y: -1.0637321}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -6918,7 +6918,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 21.094038, y: 22.641476}
+  m_Size: {x: 43.98619, y: 22.641476}
   m_EdgeRadius: 0
 --- !u!61 &1271072888
 BoxCollider2D:
@@ -6954,7 +6954,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 12.365344, y: -1.106184}
+  m_Offset: {x: 0.27138186, y: -1.106184}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -6964,7 +6964,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 45.478706, y: 22.667263}
+  m_Size: {x: 21.290787, y: 22.667263}
   m_EdgeRadius: 0
 --- !u!114 &1271072889
 MonoBehaviour:
@@ -9956,6 +9956,12 @@ GameObject:
   - component: {fileID: 1851736994}
   - component: {fileID: 1851736993}
   - component: {fileID: 1851737000}
+  - component: {fileID: 1851737006}
+  - component: {fileID: 1851737005}
+  - component: {fileID: 1851737004}
+  - component: {fileID: 1851737003}
+  - component: {fileID: 1851737002}
+  - component: {fileID: 1851737001}
   m_Layer: 0
   m_Name: FungusController
   m_TagString: Untagged
@@ -10694,6 +10700,7 @@ MonoBehaviour:
   - {fileID: 1851736973}
   - {fileID: 1851736970}
   - {fileID: 1851736969}
+  - {fileID: 1851737001}
   suppressAllAutoSelections: 0
 --- !u!114 &1851736985
 MonoBehaviour:
@@ -10752,6 +10759,7 @@ MonoBehaviour:
   - {fileID: 1851736979}
   - {fileID: 1851736972}
   - {fileID: 1851736971}
+  - {fileID: 1851737002}
   suppressAllAutoSelections: 0
 --- !u!114 &1851736987
 MonoBehaviour:
@@ -10859,6 +10867,7 @@ MonoBehaviour:
   description: 
   eventHandler: {fileID: 0}
   commandList:
+  - {fileID: 1851737003}
   - {fileID: 1851736978}
   - {fileID: 1851736989}
   - {fileID: 1851736988}
@@ -10894,7 +10903,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Fungus::Fungus.Flowchart
   version: 1
-  scrollPos: {x: 192.9352, y: 258.34085}
+  scrollPos: {x: 147.2209, y: 85.279526}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 400
@@ -10905,8 +10914,10 @@ MonoBehaviour:
     y: 0
     width: 0
     height: 0
-  selectedBlocks: []
-  selectedCommands: []
+  selectedBlocks:
+  - {fileID: 1851736984}
+  selectedCommands:
+  - {fileID: 1851737001}
   variables:
   - {fileID: 1851736991}
   description: 
@@ -11120,12 +11131,14 @@ MonoBehaviour:
   description: 
   eventHandler: {fileID: 0}
   commandList:
+  - {fileID: 1851737005}
   - {fileID: 1851736998}
   - {fileID: 1851736997}
   - {fileID: 1851736996}
   - {fileID: 1851736995}
   - {fileID: 1851736994}
   - {fileID: 1851736993}
+  - {fileID: 1851737004}
   suppressAllAutoSelections: 0
 --- !u!114 &1851737000
 MonoBehaviour:
@@ -11157,6 +11170,103 @@ MonoBehaviour:
   move: 0
   shiftIntoPlace: 0
   waitUntilFinished: 0
+--- !u!114 &1851737001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1851736967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Fungus::Fungus.CallMethod
+  itemId: 56
+  indentLevel: 0
+  targetObject: {fileID: 1851736967}
+  methodName: ShowNusaUI
+  delay: 0
+--- !u!114 &1851737002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1851736967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Fungus::Fungus.CallMethod
+  itemId: 55
+  indentLevel: 0
+  targetObject: {fileID: 1851736967}
+  methodName: ShowNusaUI
+  delay: 0
+--- !u!114 &1851737003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1851736967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Fungus::Fungus.CallMethod
+  itemId: 54
+  indentLevel: 0
+  targetObject: {fileID: 1851736967}
+  methodName: HideNusaUI
+  delay: 0
+--- !u!114 &1851737004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1851736967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Fungus::Fungus.CallMethod
+  itemId: 53
+  indentLevel: 0
+  targetObject: {fileID: 1851736967}
+  methodName: ShowNusaUI
+  delay: 0
+--- !u!114 &1851737005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1851736967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Fungus::Fungus.CallMethod
+  itemId: 52
+  indentLevel: 0
+  targetObject: {fileID: 1851736967}
+  methodName: HideNusaUI
+  delay: 0
+--- !u!114 &1851737006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1851736967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5fb6ea163f38ef4caf45965c4fd5aa3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FungusUIManager
 --- !u!1 &1856819503
 GameObject:
   m_ObjectHideFlags: 0
@@ -11307,8 +11417,8 @@ Transform:
   m_GameObject: {fileID: 1858682538}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.5, y: -1.49, z: 0}
-  m_LocalScale: {x: 0.2650636, y: 0.2248932, z: 1}
+  m_LocalPosition: {x: -4.5021, y: -1.4825, z: 0}
+  m_LocalScale: {x: 5.5898166, y: 4.760209, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1260535536}
@@ -11421,7 +11531,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.0000011920929, y: -0.09066415}
+  m_Offset: {x: -0.0036250353, y: -0.008541148}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -11431,7 +11541,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 14.169569, y: 3.284768}
+  m_Size: {x: 0.88201845, y: 0.18217567}
   m_EdgeRadius: 0
 --- !u!120 &1858682543
 LineRenderer:

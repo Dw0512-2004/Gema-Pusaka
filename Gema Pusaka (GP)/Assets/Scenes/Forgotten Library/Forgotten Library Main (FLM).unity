@@ -6239,6 +6239,10 @@ GameObject:
   - component: {fileID: 896473277}
   - component: {fileID: 896473286}
   - component: {fileID: 896473285}
+  - component: {fileID: 896473290}
+  - component: {fileID: 896473289}
+  - component: {fileID: 896473287}
+  - component: {fileID: 896473288}
   m_Layer: 0
   m_Name: FungusController
   m_TagString: Untagged
@@ -6386,7 +6390,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Fungus::Fungus.Block
   nodeRect:
     serializedVersion: 2
-    x: 11.736946
+    x: 13.048427
     y: -135.05312
     width: 115.288
     height: 40
@@ -6397,6 +6401,7 @@ MonoBehaviour:
   description: 
   eventHandler: {fileID: 0}
   commandList:
+  - {fileID: 896473290}
   - {fileID: 896473263}
   - {fileID: 896473262}
   - {fileID: 896473276}
@@ -6638,6 +6643,7 @@ MonoBehaviour:
   - {fileID: 896473279}
   - {fileID: 896473278}
   - {fileID: 896473277}
+  - {fileID: 896473288}
   suppressAllAutoSelections: 0
 --- !u!114 &896473273
 MonoBehaviour:
@@ -6671,6 +6677,7 @@ MonoBehaviour:
   - {fileID: 896473267}
   - {fileID: 896473266}
   - {fileID: 896473265}
+  - {fileID: 896473287}
   suppressAllAutoSelections: 0
 --- !u!114 &896473274
 MonoBehaviour:
@@ -7292,6 +7299,69 @@ MonoBehaviour:
   move: 0
   shiftIntoPlace: 0
   waitUntilFinished: 0
+--- !u!114 &896473287
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 896473253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Fungus::Fungus.CallMethod
+  itemId: 26
+  indentLevel: 0
+  targetObject: {fileID: 896473253}
+  methodName: ShowNusaUI
+  delay: 0
+--- !u!114 &896473288
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 896473253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Fungus::Fungus.CallMethod
+  itemId: 27
+  indentLevel: 0
+  targetObject: {fileID: 896473253}
+  methodName: ShowNusaUI
+  delay: 0
+--- !u!114 &896473289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 896473253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5fb6ea163f38ef4caf45965c4fd5aa3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FungusUIManager
+--- !u!114 &896473290
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 896473253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Fungus::Fungus.CallMethod
+  itemId: 25
+  indentLevel: 0
+  targetObject: {fileID: 896473253}
+  methodName: HideNusaUI
+  delay: 0
 --- !u!1 &945005018
 GameObject:
   m_ObjectHideFlags: 0
@@ -8116,8 +8186,8 @@ Transform:
   m_GameObject: {fileID: 1196703460}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.97, y: -0.51, z: 0}
-  m_LocalScale: {x: 0.3404979, y: 0.3380129, z: 1}
+  m_LocalPosition: {x: -1.8462, y: -0.51, z: 0}
+  m_LocalScale: {x: 6.4056973, y: 5.126476, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 431032912}
@@ -8171,7 +8241,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: -3459164222361571535, guid: 2534baf68c5107740be2209fc8fa4aeb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -8203,7 +8273,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1196703460}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
@@ -8230,17 +8300,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.068517685, y: -0.055215}
+  m_Offset: {x: -0.0005837977, y: -0.0036724359}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.88, y: 0.2}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 14.237595, y: 3.0982506}
+  m_Size: {x: 0.8831473, y: 0.19143862}
   m_EdgeRadius: 0
 --- !u!120 &1196703465
 LineRenderer:
@@ -12218,8 +12288,8 @@ Transform:
   m_GameObject: {fileID: 1628096952}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.6642, y: 2.1348, z: 0}
-  m_LocalScale: {x: 0.37377775, y: 0.43104285, z: 1}
+  m_LocalPosition: {x: -8.5017, y: 2.0264, z: 0}
+  m_LocalScale: {x: 5.7039776, y: 5.1193533, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 431032912}
@@ -12273,7 +12343,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: 59002581b2ad6ed448f7189e88ac3ece, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 62226da06043d1445945e2c4ba4dc0d1, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -12305,7 +12375,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1628096952}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
@@ -12332,17 +12402,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.013702631, y: -0.055217028}
+  m_Offset: {x: 0.0001758933, y: -0.0043308437}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3, y: 3}
+    oldSize: {x: 0.88, y: 0.2}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 14.292404, y: 3.1534667}
+  m_Size: {x: 0.88444924, y: 0.18854499}
   m_EdgeRadius: 0
 --- !u!120 &1628096957
 LineRenderer:
@@ -14002,7 +14072,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 5.625
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2

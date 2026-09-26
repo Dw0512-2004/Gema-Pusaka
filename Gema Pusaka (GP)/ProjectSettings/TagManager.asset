@@ -8,6 +8,8 @@ TagManager:
   - Border
   - Encounter
   - HiddenPlatform
+  - Puzzle
+  - puzzle
   layers:
   - Default
   - TransparentFX

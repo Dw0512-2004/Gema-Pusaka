@@ -12,7 +12,7 @@ public class DataManager : MonoBehaviour
     public Transform slotsContainer;
 
     [Header("槽位數量")]
-    public int totalSlots = 10; // 🌟 這裡預設改為 10
+    public int totalSlots = 10; 
 
     private void Start()
     {
@@ -61,18 +61,33 @@ public class DataManager : MonoBehaviour
         {
             PlayerPrefs.SetInt("Slot_" + slotIndex + "_Skill_" + s, 0);
         }
-
         PlayerPrefs.SetInt("Slot_" + slotIndex + "_HasSavedPos", 0); 
         PlayerPrefs.SetInt("CurrentActiveSlot", slotIndex);
-        PlayerPrefs.Save();
         
+        // 🌟 創建新存檔時，清空 Runtime 數據
+        PlayerPrefs.SetInt("Runtime_Has_Serunai", 0);
+        PlayerPrefs.SetInt("Runtime_Has_Gong", 0);
+        PlayerPrefs.SetInt("Runtime_Has_Gendang", 0);
+        PlayerPrefs.SetInt("Runtime_Has_Nobat", 0);
+        PlayerPrefs.SetInt("Runtime_GameProgress", 0);
+
+        PlayerPrefs.Save();
         SafeLoadScene(defaultStartSceneName);
     }
 
     private void LoadSave(int slotIndex)
     {
         PlayerPrefs.SetInt("CurrentActiveSlot", slotIndex);
+        
+        // 🌟 載入存檔時，將 Slot 的數據覆寫回 Runtime 變數
+        PlayerPrefs.SetInt("Runtime_Has_Serunai", PlayerPrefs.GetInt("Slot_" + slotIndex + "_Skill_0", 0));
+        PlayerPrefs.SetInt("Runtime_Has_Gong", PlayerPrefs.GetInt("Slot_" + slotIndex + "_Skill_1", 0));
+        PlayerPrefs.SetInt("Runtime_Has_Gendang", PlayerPrefs.GetInt("Slot_" + slotIndex + "_Skill_2", 0));
+        PlayerPrefs.SetInt("Runtime_Has_Nobat", PlayerPrefs.GetInt("Slot_" + slotIndex + "_Skill_3", 0));
+        PlayerPrefs.SetInt("Runtime_GameProgress", PlayerPrefs.GetInt("Slot_" + slotIndex + "_Progress", 0));
+
         PlayerPrefs.Save();
+        
         string targetScene = PlayerPrefs.GetString("Slot_" + slotIndex + "_Scene", defaultStartSceneName);
         SafeLoadScene(targetScene);
     }

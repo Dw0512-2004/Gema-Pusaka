@@ -183,7 +183,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 5.625
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -3288,7 +3288,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Fungus::Fungus.Flowchart
   version: 1
-  scrollPos: {x: -529.8505, y: 207.89128}
+  scrollPos: {x: 27.56898, y: 89.1815}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 400
@@ -3300,9 +3300,9 @@ MonoBehaviour:
     width: 0
     height: 0
   selectedBlocks:
-  - {fileID: 23795227}
+  - {fileID: 23795231}
   selectedCommands:
-  - {fileID: 23795240}
+  - {fileID: 23795229}
   variables:
   - {fileID: 23795203}
   description: 
@@ -4498,7 +4498,7 @@ MonoBehaviour:
   waitUntilFinished: 0
 --- !u!114 &23795240
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -4515,7 +4515,7 @@ MonoBehaviour:
   delay: 0
 --- !u!114 &23795241
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -5993,7 +5993,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.64535046, y: 0}
+  m_Offset: {x: 0.6820855, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -6003,7 +6003,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 2.290701, y: 1}
+  m_Size: {x: 3.010703, y: 1}
   m_EdgeRadius: 0
 --- !u!114 &295330600
 MonoBehaviour:
@@ -6632,7 +6632,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nameText: Gong Spirit
-  nameColor: {r: 0, g: 0.40056348, b: 1, a: 1}
+  nameColor: {r: 1, g: 1, b: 1, a: 1}
   soundEffect: {fileID: 0}
   portraits:
   - {fileID: 21300000, guid: 4d17b62a5de067e478247bcc44106c31, type: 3}
@@ -10294,7 +10294,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.17048526}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -10304,7 +10304,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1, y: 2.6151242}
   m_EdgeRadius: 0
 --- !u!114 &1111643142
 MonoBehaviour:
@@ -15018,8 +15018,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 712.9327, y: -704.26}
-  m_SizeDelta: {x: 445.6122, y: 704.26}
+  m_AnchoredPosition: {x: 712.9327, y: -880.55115}
+  m_SizeDelta: {x: 445.6122, y: 666.0636}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1861840417
 MonoBehaviour:

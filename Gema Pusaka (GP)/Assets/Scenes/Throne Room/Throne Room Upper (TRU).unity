@@ -6669,7 +6669,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 5.625
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -10430,7 +10430,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Fungus::Fungus.Flowchart
   version: 1
-  scrollPos: {x: 157.88008, y: 156.21358}
+  scrollPos: {x: 287.7163, y: 143.09882}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 400
@@ -10442,9 +10442,8 @@ MonoBehaviour:
     width: 0
     height: 0
   selectedBlocks:
-  - {fileID: 2091954897}
-  selectedCommands:
-  - {fileID: 2091954921}
+  - {fileID: 2091954920}
+  selectedCommands: []
   variables:
   - {fileID: 2091954895}
   - {fileID: 2091954919}

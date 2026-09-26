@@ -1934,7 +1934,7 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: 230.02267
-    y: 104.5387
+    y: 106.171326
     width: 100.256
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -2173,7 +2173,8 @@ MonoBehaviour:
     y: 0
     width: 0
     height: 0
-  selectedBlocks: []
+  selectedBlocks:
+  - {fileID: 429330657}
   selectedCommands: []
   variables:
   - {fileID: 429330664}
@@ -14160,7 +14161,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 5.625
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2

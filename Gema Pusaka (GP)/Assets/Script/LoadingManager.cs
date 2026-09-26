@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro; 
 
 public class LoadingManager : MonoBehaviour
 {
@@ -10,6 +11,19 @@ public class LoadingManager : MonoBehaviour
     [Header("UI 引用")]
     public GameObject loadingPanel;
     public Slider progressBar;
+    
+    // 🌟 新增：隨機提示文字相關變數
+    [Tooltip("用來顯示提示的 Text 元素")]
+    public TextMeshProUGUI tipsText;
+    
+    [Tooltip("載入時隨機播放的句子列表，可以在 Inspector 自由增減")]
+    public string[] randomTips = new string[] 
+    {
+        "記得隨時存檔，以防萬一。",
+        "不同的傳統樂器能解開不同的機關。",
+        "探索地圖的每個角落，也許會有意外發現！",
+        "Nusa 的旅程充滿挑戰，保持耐心。"
+    };
 
     private bool isLoading = false; 
 
@@ -27,7 +41,9 @@ public class LoadingManager : MonoBehaviour
             return;
         }
 
+        // 🌟 遊戲一開始，確保 Panel 和 Text 都被隱藏
         if (loadingPanel != null) loadingPanel.SetActive(false);
+        if (tipsText != null) tipsText.gameObject.SetActive(false);
     }
 
     public void LoadScene(string sceneName)
@@ -46,6 +62,16 @@ public class LoadingManager : MonoBehaviour
     {
         isLoading = true;
         Time.timeScale = 1f;
+
+        // 🌟 在開啟載入畫面之前，隨機抽取一句話顯示
+        if (tipsText != null && randomTips != null && randomTips.Length > 0)
+        {
+            int randomIndex = Random.Range(0, randomTips.Length);
+            tipsText.text = randomTips[randomIndex];
+            
+            // 🌟 強制顯示文字物件
+            tipsText.gameObject.SetActive(true);
+        }
 
         if (loadingPanel != null) loadingPanel.SetActive(true);
         if (progressBar != null) progressBar.value = 0f;
@@ -81,12 +107,10 @@ public class LoadingManager : MonoBehaviour
 
         if (initializer != null)
         {
-            // 情况 A：这是游戏关卡，交给 GameInitializer 处理坐标和相机，它会稍后呼叫 HideLoadingScreen()
             Debug.Log("<color=cyan>【LoadingManager】侦测到 GameInitializer，等待其完成对齐工作...</color>");
         }
         else
         {
-            // 情况 B：这是 MainMenu 或 Cutscene，没有玩家需要对齐，直接开场！
             Debug.Log("<color=cyan>【LoadingManager】无 GameInitializer，直接关闭载入画面。</color>");
             HideLoadingScreen();
         }
@@ -95,7 +119,10 @@ public class LoadingManager : MonoBehaviour
     // 供 GameInitializer 呼叫，或者在无 GameInitializer 场景自调用的公开方法
     public void HideLoadingScreen()
     {
+        // 🌟 載入結束時，確保 Panel 和 Text 都被關閉
         if (loadingPanel != null) loadingPanel.SetActive(false);
+        if (tipsText != null) tipsText.gameObject.SetActive(false);
+        
         isLoading = false;
     }
 }

@@ -19,59 +19,48 @@ public class NusaController : MonoBehaviour
     [SerializeField] private LayerMask groundLayer;
 
     [Header("Respawn Settings (重生设置)")]
-    [Tooltip("最后一次安全的地面坐标")]
     public Vector3 lastSafePosition;
-    [Tooltip("在地面上站立多久才算作安全位置 (防悬崖边缘滑落)")]
     public float timeToRecordSafePos = 0.2f;
     private float groundedTimer = 0f;
     
-    [Header("Interaction Settings (交互设置)")]
-    [Tooltip("长按多少秒后呼出技能面板")]
+    [Header("Interaction Settings")]
     [SerializeField] private float holdDurationRequired = 0.5f;
 
-    // --- 音效設定 ---
-    [Header("Audio Settings (音效設定)")]
-    [SerializeField] private AudioClip footstepSound; // 脚步声音效 (建议使用循环的脚步音效)
-    [SerializeField] private AudioClip jumpSound;     // 跳跃声音效
-    private AudioSource audioSource;
+    [Header("Audio Settings")]
+    [SerializeField] private AudioClip footstepSound; 
+    [SerializeField] private AudioClip jumpSound;     
+    
+    // 🌟 音效播放器分離
+    private AudioSource mainAudioSource;
+    private AudioSource footstepSource; 
 
-    // --- UI 引用 ---
-    [Header("UI References (UI 引用)")]
-    [Tooltip("挂在 Nusa 身上的 Canvas 或总 UI 根物体，对话时会自动隐藏整套 UI")]
+    [Header("UI References")]
     public GameObject playerUIRoot;
     public GameObject pauseMenuPanel;
     public GameObject settingsPanel;
     public GameObject mapPanel;
 
-    [Header("Scene Settings (场景设置)")]
+    [Header("Scene Settings")]
     public string mainMenuSceneName = "Main_Menu";
     public string loadDataSceneName = "Load_Data_Scene";
     public string introductionSceneName = "Introduction_Scene"; 
-    [Tooltip("结局动画场景的名称")]
     public string endSceneName = "End_Scene"; 
 
     [HideInInspector] public bool isPaused = false;
+    public bool isGrounded;
+    public bool isFacingRight = true;
+    public bool canMove = true; 
 
-    // --- 移动端虚拟按键状态 ---
     private bool isMovingLeft;
     private bool isMovingRight;
     private float horizontalInput;
-
-    // --- 交互按键状态 ---
     private bool isInteractPressed = false;
     private float holdTimer = 0f;
     private bool panelToggled = false; 
 
-    // --- 组件引用 ---
     private Rigidbody2D rb;
     private Animator an;
     private Vector2 moveVelocity;
-    
-    // --- 状态变量 ---
-    [Header("Current State (当前状态)")]
-    public bool isGrounded;
-    public bool isFacingRight = true;
-    public bool canMove = true; 
 
     private void Awake()
     {
@@ -88,20 +77,19 @@ public class NusaController : MonoBehaviour
 
         rb = GetComponent<Rigidbody2D>();
         an = GetComponent<Animator>();
-        audioSource = GetComponent<AudioSource>(); 
+        
+        mainAudioSource = GetComponent<AudioSource>(); 
+        
+        footstepSource = gameObject.AddComponent<AudioSource>();
+        footstepSource.clip = footstepSound;
+        footstepSource.loop = true;
+        footstepSource.playOnAwake = false;
 
         CloseAllPanels();
     }
 
-    private void OnEnable()
-    {
-        SceneManager.sceneLoaded += OnSceneLoaded;
-    }
-
-    private void OnDisable()
-    {
-        SceneManager.sceneLoaded -= OnSceneLoaded;
-    }
+    private void OnEnable() => SceneManager.sceneLoaded += OnSceneLoaded;
+    private void OnDisable() => SceneManager.sceneLoaded -= OnSceneLoaded;
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
@@ -111,11 +99,26 @@ public class NusaController : MonoBehaviour
             scene.name == introductionSceneName)
         {
             Time.timeScale = 1f; 
-            if (Instance == this)
+            if (Instance == this) Instance = null;
+            
+            Destroy(gameObject, 0.1f);
+            return; 
+        }
+
+        int intent = PlayerPrefs.GetInt("IsNewGame_Intent", 0);
+        if (intent == 0)
+        {
+            int activeSlot = PlayerPrefs.GetInt("CurrentActiveSlot", 1);
+            if (PlayerPrefs.GetInt("Slot_" + activeSlot + "_HasSavedPos", 0) == 1)
             {
-                Instance = null;
+                float savedX = PlayerPrefs.GetFloat("Slot_" + activeSlot + "_PosX", transform.position.x);
+                float savedY = PlayerPrefs.GetFloat("Slot_" + activeSlot + "_PosY", transform.position.y);
+                transform.position = new Vector3(savedX, savedY, transform.position.z);
+                lastSafePosition = transform.position;
+
+                PlayerPrefs.SetInt("Slot_" + activeSlot + "_HasSavedPos", 0);
+                PlayerPrefs.Save();
             }
-            Destroy(gameObject);
         }
     }
 
@@ -125,23 +128,11 @@ public class NusaController : MonoBehaviour
         {
             if (isPaused)
             {
-                if (settingsPanel != null && settingsPanel.activeSelf)
-                {
-                    OpenPauseMenuOnly();
-                }
-                else if (mapPanel != null && mapPanel.activeSelf)
-                {
-                    CloseMap();
-                }
-                else
-                {
-                    ResumeGame();
-                }
+                if (settingsPanel != null && settingsPanel.activeSelf) OpenPauseMenuOnly();
+                else if (mapPanel != null && mapPanel.activeSelf) CloseMap();
+                else ResumeGame();
             }
-            else
-            {
-                PauseGame();
-            }
+            else PauseGame();
         }
 
         if (isPaused) return; 
@@ -154,38 +145,23 @@ public class NusaController : MonoBehaviour
             if (hitCollider.gameObject.layer != LayerMask.NameToLayer("HiddenPlatform"))
             {
                 groundedTimer += Time.deltaTime;
-                if (groundedTimer >= timeToRecordSafePos)
-                {
-                    lastSafePosition = transform.position;
-                }
+                if (groundedTimer >= timeToRecordSafePos) lastSafePosition = transform.position;
             }
-            else
-            {
-                groundedTimer = 0f;
-            }
+            else groundedTimer = 0f;
         }
-        else
-        {
-            groundedTimer = 0f; 
-        }
+        else groundedTimer = 0f; 
 
-        if (an != null) 
-        {
-            an.SetBool("isGrounded", isGrounded);
-        }
+        if (an != null) an.SetBool("isGrounded", isGrounded);
 
         if (isInteractPressed && !panelToggled)
         {
-            if (SkillManager.Instance == null || SkillManager.Instance.HasAnySkillUnlocked())
+            if (SkillManager.Instance != null && SkillManager.Instance.HasAnySkillUnlocked())
             {
                 holdTimer += Time.deltaTime;
                 if (holdTimer >= holdDurationRequired)
                 {
-                    if (SkillManager.Instance != null)
-                    {
-                        SkillManager.Instance.ShowPanel();
-                        panelToggled = true; 
-                    }
+                    SkillManager.Instance.ShowPanel();
+                    panelToggled = true; 
                 }
             }
         }
@@ -197,7 +173,7 @@ public class NusaController : MonoBehaviour
         {
             horizontalInput = 0f;
             if (an != null) an.SetFloat("Speed", 0f);
-            StopFootstepSound();
+            if (footstepSource != null && footstepSource.isPlaying) footstepSource.Stop();
             return;
         }
 
@@ -210,28 +186,17 @@ public class NusaController : MonoBehaviour
 
         if (an != null) an.SetFloat("Speed", Mathf.Abs(horizontalInput));
 
-        // ==========================================
-        // 🌟 走路音效自動控管 (替代動畫事件)
-        // ==========================================
         bool isWalking = isGrounded && Mathf.Abs(horizontalInput) > 0.01f && canMove;
-
-        if (isWalking)
+        if (footstepSource != null && footstepSound != null)
         {
-            if (footstepSound != null && audioSource != null && audioSource.clip != footstepSound)
+            if (isWalking)
             {
-                audioSource.clip = footstepSound;
-                audioSource.loop = true;
-                audioSource.Play();
+                if (!footstepSource.isPlaying) footstepSource.Play();
             }
-            else if (audioSource != null && !audioSource.isPlaying && audioSource.clip == footstepSound)
+            else
             {
-                audioSource.Play();
+                if (footstepSource.isPlaying) footstepSource.Stop();
             }
-        }
-        else
-        {
-            // 一旦停下腳步、或離地跳躍，立即中斷腳步聲
-            StopFootstepSound();
         }
 
         if (horizontalInput > 0 && !isFacingRight) Flip();
@@ -248,7 +213,6 @@ public class NusaController : MonoBehaviour
             rb.linearVelocity = new Vector2(0f, rb.linearVelocity.y);
             return;
         }
-
         moveVelocity = new Vector2(horizontalInput * moveSpeed, rb.linearVelocity.y);
         rb.linearVelocity = moveVelocity;
     }
@@ -259,11 +223,7 @@ public class NusaController : MonoBehaviour
         Time.timeScale = 0f; 
         DisableMovement();
         OpenPauseMenuOnly();
-
-        if (audioSource != null && audioSource.isPlaying)
-        {
-            audioSource.Pause();
-        }
+        if (mainAudioSource != null && mainAudioSource.isPlaying) mainAudioSource.Pause();
     }
 
     public void ResumeGame()
@@ -272,11 +232,7 @@ public class NusaController : MonoBehaviour
         Time.timeScale = 1f; 
         EnableMovement();
         CloseAllPanels();
-
-        if (audioSource != null)
-        {
-            audioSource.UnPause();
-        }
+        if (mainAudioSource != null) mainAudioSource.UnPause();
     }
 
     public void OpenSettings()
@@ -291,21 +247,13 @@ public class NusaController : MonoBehaviour
         isPaused = true;
         Time.timeScale = 0f; 
         DisableMovement();
-
         if (pauseMenuPanel != null) pauseMenuPanel.SetActive(false);
         if (settingsPanel != null) settingsPanel.SetActive(false);
         if (mapPanel != null) mapPanel.SetActive(true);
-
-        if (audioSource != null && audioSource.isPlaying)
-        {
-            audioSource.Pause();
-        }
+        if (mainAudioSource != null && mainAudioSource.isPlaying) mainAudioSource.Pause();
     }
 
-    public void CloseMap()
-    {
-        ResumeGame();
-    }
+    public void CloseMap() => ResumeGame();
 
     public void SaveGameDataToCurrentSlot()
     {
@@ -313,20 +261,49 @@ public class NusaController : MonoBehaviour
         string currentScene = SceneManager.GetActiveScene().name;
         PlayerPrefs.SetString("Slot_" + activeSlot + "_Scene", currentScene);
 
-        int currentProgress = PlayerPrefs.GetInt("Runtime_GameProgress", 0); 
-        PlayerPrefs.SetInt("Slot_" + activeSlot + "_Progress", currentProgress == 0 ? 10 : currentProgress);
+        int s0 = (SkillManager.Instance != null && SkillManager.Instance.isSerunaiUnlocked) ? 1 : 0;
+        int s1 = (SkillManager.Instance != null && SkillManager.Instance.isGongUnlocked) ? 1 : 0;
+        int s2 = (SkillManager.Instance != null && SkillManager.Instance.isGendangUnlocked) ? 1 : 0;
+        int s3 = (SkillManager.Instance != null && SkillManager.Instance.isNobatUnlocked) ? 1 : 0;
 
-        PlayerPrefs.SetInt("Slot_" + activeSlot + "_Skill_0", PlayerPrefs.GetInt("Runtime_Has_Serunai", 0));
-        PlayerPrefs.SetInt("Slot_" + activeSlot + "_Skill_1", PlayerPrefs.GetInt("Runtime_Has_Gong", 0));
-        PlayerPrefs.SetInt("Slot_" + activeSlot + "_Skill_2", PlayerPrefs.GetInt("Runtime_Has_Gendang", 0));
-        PlayerPrefs.SetInt("Slot_" + activeSlot + "_Skill_3", PlayerPrefs.GetInt("Runtime_Has_Nobat", 0));
+        // 🌟 核心修改：以解鎖的技能數量直接計算遊戲總進度 (每個技能 25%)
+        int currentProgress = (s0 * 25) + (s1 * 25) + (s2 * 25) + (s3 * 25);
+        
+        PlayerPrefs.SetInt("Slot_" + activeSlot + "_Progress", currentProgress);
+        PlayerPrefs.SetInt("Runtime_GameProgress", currentProgress);
+
+        PlayerPrefs.SetInt("Slot_" + activeSlot + "_Skill_0", s0);
+        PlayerPrefs.SetInt("Slot_" + activeSlot + "_Skill_1", s1);
+        PlayerPrefs.SetInt("Slot_" + activeSlot + "_Skill_2", s2);
+        PlayerPrefs.SetInt("Slot_" + activeSlot + "_Skill_3", s3);
+
+        PlayerPrefs.SetInt("Runtime_Has_Serunai", s0);
+        PlayerPrefs.SetInt("Runtime_Has_Gong", s1);
+        PlayerPrefs.SetInt("Runtime_Has_Gendang", s2);
+        PlayerPrefs.SetInt("Runtime_Has_Nobat", s3);
 
         PlayerPrefs.SetFloat("Slot_" + activeSlot + "_PosX", transform.position.x);
         PlayerPrefs.SetFloat("Slot_" + activeSlot + "_PosY", transform.position.y);
         PlayerPrefs.SetInt("Slot_" + activeSlot + "_HasSavedPos", 1);
 
         PlayerPrefs.Save();
+        Debug.Log($"<color=green>【存檔成功】槽位 {activeSlot} 技能狀態已保存！目前進度：{currentProgress}%</color>");
+        
         ResumeGame();
+
+        if (NusaPromptManager.Instance != null)
+        {
+            NusaPromptManager.Instance.ShowPrompt("Saved");
+            Invoke(nameof(ClearSavePrompt), 2f); 
+        }
+    }
+
+    private void ClearSavePrompt()
+    {
+        if (NusaPromptManager.Instance != null)
+        {
+            NusaPromptManager.Instance.HidePrompt();
+        }
     }
 
     public void GoToLoadDataScene()
@@ -336,10 +313,7 @@ public class NusaController : MonoBehaviour
         SafeExitToScene(loadDataSceneName);
     }
 
-    public void ExitToMainMenu()
-    {
-        SafeExitToScene(mainMenuSceneName);
-    }
+    public void ExitToMainMenu() => SafeExitToScene(mainMenuSceneName);
 
     public void OpenPauseMenuOnly()
     {
@@ -362,24 +336,9 @@ public class NusaController : MonoBehaviour
             Time.timeScale = 1f; 
             isPaused = false;
             CloseAllPanels();
-
-            if (targetSceneName == mainMenuSceneName || 
-                targetSceneName == loadDataSceneName || 
-                targetSceneName == introductionSceneName ||
-                targetSceneName == endSceneName)
-            {
-                if (Instance == this)
-                {
-                    Instance = null;
-                }
-                Destroy(gameObject);
-            }
         };
 
-        if (LoadingManager.Instance != null)
-        {
-            LoadingManager.Instance.LoadSceneWithCleanUp(targetSceneName, cleanUpLogic);
-        }
+        if (LoadingManager.Instance != null) LoadingManager.Instance.LoadSceneWithCleanUp(targetSceneName, cleanUpLogic);
         else
         {
             cleanUpLogic.Invoke();
@@ -394,18 +353,14 @@ public class NusaController : MonoBehaviour
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, maxJumpForce);
             if (an != null) an.SetTrigger("Jump");
             
-            // 起跳時立即斷掉腳步聲，並播放跳躍音效
-            StopFootstepSound();
+            if (footstepSource != null && footstepSource.isPlaying) footstepSource.Stop();
             PlayJumpSound();
         }
     }
 
     public void StopJump()
     {
-        if (rb.linearVelocity.y > 0)
-        {
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y * jumpCutMultiplier);
-        }
+        if (rb.linearVelocity.y > 0) rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y * jumpCutMultiplier);
     }
 
     public void StartMovingLeft() => isMovingLeft = true;
@@ -421,13 +376,10 @@ public class NusaController : MonoBehaviour
         horizontalInput = 0f;
         if (rb != null) rb.linearVelocity = new Vector2(0f, rb.linearVelocity.y);
         if (an != null) an.SetFloat("Speed", 0f);
-        StopFootstepSound();
+        if (footstepSource != null && footstepSource.isPlaying) footstepSource.Stop();
     }
 
-    public void EnableMovement()
-    {
-        canMove = true;
-    }
+    public void EnableMovement() => canMove = true;
 
     public void SkillPointerDown()
     {
@@ -441,14 +393,7 @@ public class NusaController : MonoBehaviour
     {
         if (isPaused) return;
         isInteractPressed = false;
-        
-        if (!panelToggled && holdTimer < holdDurationRequired)
-        {
-            if (SkillManager.Instance != null) 
-            {
-                SkillManager.Instance.CastCurrentSkill(); 
-            }
-        }
+        if (!panelToggled && holdTimer < holdDurationRequired && SkillManager.Instance != null) SkillManager.Instance.CastCurrentSkill(); 
         holdTimer = 0f;
     }
 
@@ -475,46 +420,23 @@ public class NusaController : MonoBehaviour
         }
     }
 
-    // ==========================================
-    // 音效管理方法
-    // ==========================================
-    
-    private void StopFootstepSound()
-    {
-        if (audioSource != null && audioSource.isPlaying && audioSource.clip == footstepSound)
-        {
-            audioSource.Stop();
-            audioSource.loop = false;
-        }
-    }
+    public void PlayFootstepSound() { /* 已改由 Update 控制 */ }
 
     public void PlayJumpSound()
     {
-        if (jumpSound != null && audioSource != null && !isPaused)
-        {
-            audioSource.PlayOneShot(jumpSound);
-        }
+        if (jumpSound != null && mainAudioSource != null && !isPaused) 
+            mainAudioSource.PlayOneShot(jumpSound);
     }
 
-    // ==========================================
-    // Fungus 集成方法
-    // ==========================================
-    
     public void HideUIForDialogue()
     {
-        if (playerUIRoot != null)
-        {
-            playerUIRoot.SetActive(false);
-        }
+        if (playerUIRoot != null) playerUIRoot.SetActive(false);
         DisableMovement();
     }
 
     public void ShowUIAfterDialogue()
     {
-        if (playerUIRoot != null)
-        {
-            playerUIRoot.SetActive(true);
-        }
+        if (playerUIRoot != null) playerUIRoot.SetActive(true);
         EnableMovement();
     }
 

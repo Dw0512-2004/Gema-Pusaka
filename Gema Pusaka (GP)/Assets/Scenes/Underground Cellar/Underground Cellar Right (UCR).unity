@@ -6468,6 +6468,7 @@ GameObject:
   - component: {fileID: 1496649034}
   - component: {fileID: 1496649033}
   - component: {fileID: 1496649032}
+  - component: {fileID: 1496649037}
   m_Layer: 0
   m_Name: FungusController
   m_TagString: Untagged
@@ -7144,8 +7145,7 @@ MonoBehaviour:
     height: 0
   selectedBlocks:
   - {fileID: 1496648963}
-  selectedCommands:
-  - {fileID: 1496649032}
+  selectedCommands: []
   variables:
   - {fileID: 1496649021}
   description: 
@@ -7668,6 +7668,7 @@ MonoBehaviour:
   - {fileID: 1496649029}
   - {fileID: 1496649028}
   - {fileID: 1496649027}
+  - {fileID: 1496649037}
   suppressAllAutoSelections: 0
 --- !u!114 &1496649032
 MonoBehaviour:
@@ -7749,6 +7750,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5fb6ea163f38ef4caf45965c4fd5aa3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FungusUIManager
+--- !u!114 &1496649037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1496648943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Fungus::Fungus.CallMethod
+  itemId: 88
+  indentLevel: 0
+  targetObject: {fileID: 1496648943}
+  methodName: ShowNusaUI
+  delay: 0
 --- !u!1 &1509163977
 GameObject:
   m_ObjectHideFlags: 0
@@ -9737,7 +9755,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 5.625
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2

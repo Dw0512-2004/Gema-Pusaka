@@ -1991,8 +1991,8 @@ Transform:
   m_GameObject: {fileID: 175789086}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 24.9161, y: 0.2953, z: 0}
-  m_LocalScale: {x: 0.3885771, y: 0.3194138, z: 1}
+  m_LocalPosition: {x: 26.5048, y: 0.5112, z: 0}
+  m_LocalScale: {x: 3.3848448, y: 4.5073223, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 35121115}
@@ -2046,7 +2046,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 62226da06043d1445945e2c4ba4dc0d1, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2078,7 +2078,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 175789086}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
@@ -2105,17 +2105,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.10844898, y: -0.1507802}
+  m_Offset: {x: -0.0049378127, y: -0.006847009}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.88, y: 0.2}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 11.628073, y: 3.33709}
+  m_Size: {x: 0.89166474, y: 0.19395569}
   m_EdgeRadius: 0
 --- !u!120 &175789091
 LineRenderer:
@@ -5862,6 +5862,8 @@ GameObject:
   - component: {fileID: 749246174}
   - component: {fileID: 749246172}
   - component: {fileID: 749246173}
+  - component: {fileID: 749246176}
+  - component: {fileID: 749246177}
   m_Layer: 0
   m_Name: FungusController
   m_TagString: Untagged
@@ -5894,8 +5896,9 @@ MonoBehaviour:
     width: 0
     height: 0
   selectedBlocks:
-  - {fileID: 749246117}
-  selectedCommands: []
+  - {fileID: 749246099}
+  selectedCommands:
+  - {fileID: 749246177}
   variables:
   - {fileID: 749246085}
   description: 
@@ -6222,7 +6225,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Fungus::Fungus.Block
   nodeRect:
     serializedVersion: 2
-    x: 840.8083
+    x: 842.34674
     y: 82.802734
     width: 107.888
     height: 40
@@ -6243,6 +6246,7 @@ MonoBehaviour:
   - {fileID: 749246101}
   - {fileID: 749246100}
   - {fileID: 749246098}
+  - {fileID: 749246177}
   - {fileID: 749246173}
   suppressAllAutoSelections: 0
 --- !u!114 &749246100
@@ -6757,6 +6761,7 @@ MonoBehaviour:
   - {fileID: 749246110}
   - {fileID: 749246109}
   - {fileID: 749246108}
+  - {fileID: 749246176}
   - {fileID: 749246172}
   suppressAllAutoSelections: 0
 --- !u!114 &749246118
@@ -8358,6 +8363,62 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5fb6ea163f38ef4caf45965c4fd5aa3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FungusUIManager
+--- !u!114 &749246176
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 749246083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Fungus::Fungus.InvokeMethod
+  itemId: 85
+  indentLevel: 0
+  description: 
+  targetObject: {fileID: 1100692175}
+  targetComponentAssemblyName: StatueSkillManager, Assembly-CSharp, Version=0.0.0.0,
+    Culture=neutral, PublicKeyToken=null
+  targetComponentFullname: 'UnityEngine.Component[]'
+  targetComponentText: StatueSkillManager
+  targetMethod: GiveGendang
+  targetMethodText: 'GiveGendang (): Void'
+  methodParameters: []
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &749246177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 749246083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Fungus::Fungus.InvokeMethod
+  itemId: 86
+  indentLevel: 0
+  description: 
+  targetObject: {fileID: 1100692175}
+  targetComponentAssemblyName: StatueSkillManager, Assembly-CSharp, Version=0.0.0.0,
+    Culture=neutral, PublicKeyToken=null
+  targetComponentFullname: 'UnityEngine.Component[]'
+  targetComponentText: StatueSkillManager
+  targetMethod: GiveGendang
+  targetMethodText: 'GiveGendang (): Void'
+  methodParameters: []
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
 --- !u!1 &770156725
 GameObject:
   m_ObjectHideFlags: 0
@@ -12506,6 +12567,7 @@ GameObject:
   - component: {fileID: 1100692178}
   - component: {fileID: 1100692177}
   - component: {fileID: 1100692176}
+  - component: {fileID: 1100692180}
   m_Layer: 0
   m_Name: Gendang
   m_TagString: Encounter
@@ -12652,6 +12714,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1100692180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1100692175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8c6643349777d14e9afb32ddb3ac7be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StatueSkillManager
+  flowchart: {fileID: 749246084}
 --- !u!1 &1147435237
 GameObject:
   m_ObjectHideFlags: 0
@@ -13526,7 +13601,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 5.625
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -13686,8 +13761,8 @@ Transform:
   m_GameObject: {fileID: 1311526902}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 31.14, y: 1.45, z: 0}
-  m_LocalScale: {x: 0.3896075, y: 0.3562862, z: 1}
+  m_LocalPosition: {x: 32.2626, y: 1.4713, z: 0}
+  m_LocalScale: {x: 4.1262784, y: 4.883443, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 35121115}
@@ -13741,7 +13816,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 62226da06043d1445945e2c4ba4dc0d1, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -13800,17 +13875,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.030910492, y: 0.00000047683716}
+  m_Offset: {x: -0.00081445277, y: -0.003677398}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.88, y: 0.2}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 11.754465, y: 3.2303996}
+  m_Size: {x: 0.9020989, y: 0.18968791}
   m_EdgeRadius: 0
 --- !u!120 &1311526907
 LineRenderer:
@@ -15522,8 +15597,8 @@ Transform:
   m_GameObject: {fileID: 1894866249}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.6082, y: 0.6026, z: 0}
-  m_LocalScale: {x: 0.13960992, y: 0.1654178, z: 1}
+  m_LocalPosition: {x: 6.6082, y: 0.6185, z: 0}
+  m_LocalScale: {x: 0.13960992, y: 0.13214776, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 35121115}
@@ -15633,7 +15708,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -8.838778, y: 0.06338978}
+  m_Offset: {x: -5.7013874, y: -1.0816355}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -15643,7 +15718,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 37.82365, y: 20.055197}
+  m_Size: {x: 44.09843, y: 22.345247}
   m_EdgeRadius: 0
 --- !u!61 &1894866254
 BoxCollider2D:
@@ -15679,7 +15754,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.1609273, y: -0.0445652}
+  m_Offset: {x: 0.29541683, y: -1.0690594}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -15689,7 +15764,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 20.694633, y: 20.01022}
+  m_Size: {x: 21.60732, y: 22.059208}
   m_EdgeRadius: 0
 --- !u!114 &1894866255
 MonoBehaviour:

@@ -782,16 +782,16 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 1.5755091, y: 22.084574}
-      - {x: -7.6158404, y: 22.150316}
-      - {x: -7.4563823, y: 9.401917}
-      - {x: -7.4054475, y: 6.186516}
-      - {x: -12.491776, y: 6.2608333}
-      - {x: -12.394215, y: -6.056325}
-      - {x: -2.4516726, y: -5.943968}
-      - {x: -2.421976, y: -10.907915}
-      - {x: 14.649017, y: -10.860073}
-      - {x: 14.601772, y: 22.178015}
+    - - {x: 1.6807837, y: 23.151325}
+      - {x: -8.441057, y: 23.090292}
+      - {x: -8.385881, y: 9.092085}
+      - {x: -8.396914, y: 7.13667}
+      - {x: -13.40062, y: 7.149021}
+      - {x: -13.401363, y: -7.863267}
+      - {x: -3.4588208, y: -7.869402}
+      - {x: -3.3402588, y: -11.85582}
+      - {x: 15.564943, y: -11.896698}
+      - {x: 15.614712, y: 23.178293}
   m_UseDelaunayMesh: 1
 --- !u!4 &168861789
 Transform:
@@ -4408,7 +4408,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.21980035, y: 0}
+  m_Offset: {x: 0.26977745, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -4418,7 +4418,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.2383195, y: 1}
+  m_Size: {x: 1.1383655, y: 1}
   m_EdgeRadius: 0
 --- !u!114 &706146676
 MonoBehaviour:
@@ -4466,7 +4466,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.0014377683, y: 0}
+  m_Offset: {x: -0.045735642, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -4476,7 +4476,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.79009235, y: 1}
+  m_Size: {x: 0.7014966, y: 1}
   m_EdgeRadius: 0
 --- !u!1 &793156787
 GameObject:
@@ -6031,7 +6031,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Fungus::Fungus.Flowchart
   version: 1
-  scrollPos: {x: 167.18243, y: 198.86989}
+  scrollPos: {x: 160.65181, y: 38.870026}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 400
@@ -8305,7 +8305,6 @@ GameObject:
   - component: {fileID: 1779738435}
   - component: {fileID: 1779738438}
   - component: {fileID: 1779738439}
-  - component: {fileID: 1779738440}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -8463,30 +8462,6 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
   CustomBlends: {fileID: 0}
---- !u!114 &1779738440
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1779738434}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c88f5cead0c0b2a4eb05b5900433f8d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.2D.Runtime::UnityEngine.Rendering.Universal.PixelPerfectCamera
-  m_ComponentVersion: 1
-  m_AssetsPPU: 16
-  m_RefResolutionX: 320
-  m_RefResolutionY: 180
-  m_CropFrame: 0
-  m_GridSnapping: 0
-  m_FilterMode: 0
-  m_UpscaleRT: 0
-  m_PixelSnapping: 0
-  m_CropFrameX: 0
-  m_CropFrameY: 0
-  m_StretchFill: 0
 --- !u!1 &1796873059
 GameObject:
   m_ObjectHideFlags: 0

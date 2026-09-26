@@ -2564,7 +2564,7 @@ MonoBehaviour:
     width: 0
     height: 0
   selectedBlocks:
-  - {fileID: 508160310}
+  - {fileID: 508160308}
   selectedCommands: []
   variables:
   - {fileID: 508160315}
@@ -6290,8 +6290,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1322781044}
   - component: {fileID: 1322781045}
-  - component: {fileID: 1322781048}
   - component: {fileID: 1322781047}
+  - component: {fileID: 1322781048}
   - component: {fileID: 1322781046}
   - component: {fileID: 1322781049}
   m_Layer: 0
@@ -6730,7 +6730,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 5.625
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
